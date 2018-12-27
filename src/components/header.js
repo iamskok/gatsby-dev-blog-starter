@@ -1,42 +1,44 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+import Logo from './logo';
+import Nav from './nav';
+
+function Header(props) {
+	const { classes } = props;
+	return (
+	<div className={classes.root}>
+		<AppBar position="static">
+			<Nav>
+				<Logo
+					component={Link} 
+					disableRipple={true}
+					className="button"
+					to="/"
+				>
+					{props.siteTitle}
+				</Logo>
+				<div className="navContainer">
+					<Button component={Link} to="/blog">Blog</Button>
+					<Button component={Link} to="/about">About</Button>
+					<Button component={Link} to="/contact">Contact</Button>
+				</div>
+			</Nav>
+	  </AppBar>
+	</div>
+  );
+}
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+	classes: PropTypes.object.isRequired
+};
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default withStyles({
+	root: {
+		marginBottom: 20
+	}
+})(Header);
