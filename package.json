@@ -1,7 +1,7 @@
 {
   "name": "gatsby-dev-blog-starter",
   "description": "Gatsby starter to get up and running with personal web development blog",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "author": "Vladimir Skok <skok@vova.io>",
   "dependencies": {
     "@material-ui/core": "^3.7.1",
