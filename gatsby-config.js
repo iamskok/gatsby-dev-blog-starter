@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: `<Blog />`,
+		title: `Gatsby Dev Blog Starter`,
 		description: `Gatsby starter to get up and running with personal web development blog`,
 		author: `@iamskok`,
 	},
@@ -17,7 +17,14 @@ module.exports = {
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
-				path: `${__dirname}/src/images`,
+				path: `${__dirname}/src/images`
+			}
+		},
+		`gatsby-transformer-sharp`,
+		{
+			resolve: `gatsby-plugin-sharp`,
+			options: {
+				useMozJpeg: true
 			}
 		},
 		{
@@ -27,7 +34,39 @@ module.exports = {
 					{
 						resolve: `gatsby-remark-images`,
 						options: {
-							maxWidth: 960
+							withWebp: {
+								quality: 60
+							},
+							quality: 60,
+							maxWidth: 930,
+							srcSetBreakpoints: [
+								290,
+								390,
+								435,
+								490,
+								590,
+								690,
+								725,
+								780,
+								870,
+								930,
+								980,
+								1035,
+								1160,
+								1225,
+								1365,
+								1475,
+								1560,
+								1725,
+								1860,
+								1960,
+								2070,
+								2325,
+								2415,
+								2760,
+								3160,
+								3720
+							]
 						}
 					},
 					{
@@ -39,8 +78,6 @@ module.exports = {
 				]
 			}
 		},
-		`gatsby-transformer-sharp`,
-		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -50,11 +87,8 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+				icon: `src/images/gatsby-icon.png`,
 			}
 		}
-		// this (optional) plugin enables Progressive Web App + Offline functionality
-		// To learn more, visit: https://gatsby.app/offline
-		// 'gatsby-plugin-offline',
 	]
 }
