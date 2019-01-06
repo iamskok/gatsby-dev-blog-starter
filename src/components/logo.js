@@ -6,10 +6,5 @@ export default withStyles({
 		'&:hover': {
 			backgroundColor: 'rgba(0,0,0,0)',
 		}
-	},
-	label: {
-		'&:hover': {
-			color: '#fff'
-		}
 	}
 })(Button);
