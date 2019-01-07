@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Layout from '../components/layout';
 import Card from '../components/card';
 import SEO from '../components/seo';
+import Typography from '@material-ui/core/Typography';
 
 const BlogPage = (props) => {
 	const posts = props.data.allMarkdownRemark.edges;
@@ -11,11 +12,14 @@ const BlogPage = (props) => {
 	return (
 		<Layout>
 			<SEO title="Blog" keywords={[`gatsby`, `application`, `react`]} />
-			<h1>Blog page</h1>
 
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex saepe odio quidem culpa 
-			fugit nostrum sit dolorum velit fuga placeat quo, perferendis explicabo expedita dolores 
-			maiores eveniet. Fugit.</p>
+			<Typography gutterBottom variant="h3" component="h1">Blog page</Typography>
+
+			<Typography variant="body1" paragraph={true}>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex saepe odio quidem culpa 
+				fugit nostrum sit dolorum velit fuga placeat quo, perferendis explicabo expedita dolores 
+				maiores eveniet.
+			</Typography>
 
 			<Grid container spacing={24}>
 				{posts.map((post, index) => (

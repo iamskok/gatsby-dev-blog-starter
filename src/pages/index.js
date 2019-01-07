@@ -2,6 +2,7 @@ import React from 'react';
 import {Link, graphql} from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Typography from '@material-ui/core/Typography';
 
 const IndexPage = (props) => {
 	const posts = props.data.allMarkdownRemark.edges;
@@ -9,15 +10,19 @@ const IndexPage = (props) => {
 	return (
 		<Layout>
 			<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-			<h1>Home page</h1>
+			
+			<Typography gutterBottom variant="h3" component="h1">Home page</Typography>
 
-			<p>Welcome to your new Gatsby dev blog.</p>
-			<p>Now go build something great.</p>
+			<Typography variant="body1" paragraph={true}>
+				Welcome to your new Gatsby dev blog. Now go build something great
+			</Typography>
 
 			<ul>
 				{posts.map(post => (
 				<li key={post.node.frontmatter.path}>
-					<Link to={post.node.frontmatter.path}>{post.node.frontmatter.title}</Link>
+					<Typography variant="body1">
+						<Link to={post.node.frontmatter.path}>{post.node.frontmatter.title}</Link>
+					</Typography>
 				</li>
 				))}
 			</ul>

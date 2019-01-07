@@ -30,7 +30,7 @@ function ImgMediaCard(props) {
 						{props.title}
 					</Typography>
 				
-					<Typography component="p">
+					<Typography variant="body2">
 						{props.excerpt}
 					</Typography>
 				</CardContent>

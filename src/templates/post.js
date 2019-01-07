@@ -1,6 +1,7 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 import Layout from '../components/layout';
+import Typography from '@material-ui/core/Typography';
 
 export default function Template({data}) {
 	const { markdownRemark } = data;
@@ -8,8 +9,9 @@ export default function Template({data}) {
 	return (
 		<Layout>
 			<div className="blog-post-container">
-				<h1>{frontmatter.title}</h1>
-				<h2>{frontmatter.date}</h2>
+				<Typography gutterBottom variant="h3" component="h1">{frontmatter.title}</Typography>
+				<Typography gutterBottom variant="h5">{frontmatter.date}</Typography>
+
 				<div dangerouslySetInnerHTML={{ __html: html }} />
 			</div>
 		</Layout>
