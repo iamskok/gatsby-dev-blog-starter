@@ -1,4 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+import indigo from '@material-ui/core/colors/indigo';
+import red from '@material-ui/core/colors/red';
 
 export default createMuiTheme({
 	breakpoints: {
@@ -12,16 +14,10 @@ export default createMuiTheme({
 	},
 	palette: {
 		primary: {
-			dark: '#001970',
-			light: '#666ad1',
-			main: '#303f9f',
-			contrastText: "#fff"
+			main: indigo[900]
 		},
 		secondary: {
-			dark: '#8e0000',
-			light: '#ff5f52',
-			main: '#c62828',
-			contrastText: "#fff"
+			main: red[900]
 		}
 	},
 	typography: {
