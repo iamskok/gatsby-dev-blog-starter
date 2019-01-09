@@ -1,5 +1,5 @@
 import Toolbar from '@material-ui/core/Toolbar';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 
 export default withStyles({
 	root: {
