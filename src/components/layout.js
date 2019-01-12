@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {StaticQuery, graphql} from 'gatsby';
 import Header from './header';
 import Typography from '@material-ui/core/Typography';
-import './layout.css';
+import './layout.scss';
 
 const Layout = ({ children }) => (
 	<StaticQuery
@@ -24,8 +24,7 @@ const Layout = ({ children }) => (
 					style={{
 						margin: `0 auto`,
 						maxWidth: 960,
-						padding: `0 15px`,
-						paddingTop: 0,
+						padding: `15px 15px 0`
 					}}
 				>
 					{children}
