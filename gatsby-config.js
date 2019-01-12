@@ -33,6 +33,13 @@ module.exports = {
 			options: {
 				plugins: [
 					{
+						resolve: `gatsby-remark-prismjs`,
+						options: {
+							inlineCodeMarker: '›',
+							showLineNumbers: true
+						}
+					},
+					{
 						resolve: `gatsby-remark-images`,
 						options: {
 							withWebp: {
