@@ -33,6 +33,14 @@ module.exports = {
 			options: {
 				plugins: [
 					{
+						resolve: 'gatsby-remark-code-buttons',
+						options: {
+							tooltip: 'Click to copy 💾'
+						}
+					},
+					`gatsby-remark-code-titles`,
+					`gatsby-remark-autolink-headers`,
+					{
 						resolve: `gatsby-remark-prismjs`,
 						options: {
 							inlineCodeMarker: '›',
