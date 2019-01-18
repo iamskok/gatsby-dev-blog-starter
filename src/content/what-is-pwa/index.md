@@ -1,7 +1,7 @@
 ---
 path: "/blog/what-pwa-actually-is"
 date: "2017-12-12"
-title: "What PWA actually is"
+title: "What is PWA Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, officiis quos velit nisi nihil iste similique a assumenda, voluptas suscipit praesentium, eligendi sit eveniet mollitia magnam quia soluta nobis quas."
 cover: "./cover.jpg"
 ---
 

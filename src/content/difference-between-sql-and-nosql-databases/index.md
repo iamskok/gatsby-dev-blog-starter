@@ -1,7 +1,7 @@
 ---
 path: "/blog/difference-between-sql-and-nosql-databases"
 date: "2016-12-03"
-title: "Difference between SQL and noSQL databases"
+title: "Difference between SQL and noSQL databases. Difference between SQL and noSQL databases. Difference, between SQL and noSQL databases."
 cover: "./cover.jpg"
 ---
 

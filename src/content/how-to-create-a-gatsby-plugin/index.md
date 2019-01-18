@@ -1,7 +1,7 @@
 ---
 path: "/blog/how-to-create-a-gatsby-plugin"
 date: "2018-11-07"
-title: "How to create a Gatsby plugin"
+title: "How to create a Gatsby plugin? I dom't know. kljjfwe wkelfjewf wl"
 cover: "./cover.jpg"
 ---
 
