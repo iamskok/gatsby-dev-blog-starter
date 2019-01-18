@@ -7,8 +7,9 @@ import {withStyles} from '@material-ui/core/styles';
 import Logo from './logo';
 import LogoIcon from './logoIcon';
 import Nav from './nav';
+import theme from './theme';
 import Headroom from 'react-headroom';
-import './headroom.css';
+import '../styles/headroom.scss';
 
 function Header(props) {
 	const {classes} = props;
@@ -49,12 +50,13 @@ Header.propTypes = {
 
 export default withStyles({
 	root: {
-		marginBottom: 20
+		marginBottom: 15
 	},
 	button: {
 		color: '#fff',
+		fontWeight: 100,
 		'&:hover': {
-			backgroundColor: 'rgba(255, 255, 255, 0.05)'
+			backgroundColor: theme.palette.primary.dark
 		}
 	}
 })(Header);

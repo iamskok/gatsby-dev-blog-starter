@@ -1,14 +1,14 @@
-.logoIcon {
+.logo-icon {
 	width: 45px;
 	height: 45px;
 	fill: #fff;
 	animation: in 0.25s;
 	transition: fill 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 	border-radius: 100%;
-}
 
-.logoIcon:hover {
-	fill: rgba(255, 255, 255, 0.65);
+	&::hover {
+		fill: rgba(255, 255, 255, 0.65);
+	}
 }
 
 @keyframes in {

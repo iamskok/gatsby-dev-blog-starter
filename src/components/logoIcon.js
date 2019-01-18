@@ -1,9 +1,9 @@
 import React from 'react';
-import './logoicon.css';
+import '../styles/logo-icon.scss';
 
 export default () => {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" className="logoIcon" viewBox="0 0 1200 1200">
+		<svg xmlns="http://www.w3.org/2000/svg" className="logo-icon" viewBox="0 0 1200 1200">
 			<path d="M600 28.6C284.4 28.6 28.6 284.4 28.6 600c0 315.6 255.8 571.4 571.4 571.4 315.6
 				0 571.4-255.8 571.4-571.4C1171.4 284.4 915.6 28.6 600 28.6zM151.4 606l442.6
 				442.6C351 1045.4 154.6 849 151.4 606zM700.4 1037.4L162.6 499.6C208.2 300.1 386.7

@@ -1,0 +1,25 @@
+@import 'breakpoints';
+
+@mixin media($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		$value: map-get($breakpoints, $breakpoint);
+		@if (type-of($value) == null) {
+			@content;
+		}
+
+		@else if (type-of($value) != number) or
+			($value <= 0) {
+			@error "Media query `#{$breakpoint}` has incorrect value";
+		}
+
+		@else {
+			@media (min-width: $value) {
+				@content;
+			}
+		}
+	}
+
+	@else {
+		@error "Media query `#{$breakpoint}` was not found";
+	}
+}

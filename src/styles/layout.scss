@@ -1,0 +1,18 @@
+@import 'media';
+@import 'variables';
+
+body {
+	margin: 0;
+}
+
+.container {
+	overflow: hidden;
+	min-height: calc(100vh - #{$non-container-vh});
+	margin: 0 auto;
+	max-width: $container-max-width;
+	padding: 0 $space-md 0;
+
+	@media('sm') {
+		min-height: calc(100vh - #{$non-container-vh-sm});
+	}
+}

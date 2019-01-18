@@ -1,0 +1,178 @@
+@import 'variables';
+
+.post {
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+	color: rgba(0, 0, 0, 0.87);
+
+	h1,
+	h2 {
+		font-size: 2.2rem;
+	}
+
+	h3 {
+		font-size: 1.85rem;
+	}
+
+	h4,
+	h5,
+	h6 {
+		font-size: 1.4rem;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: 400;
+		line-height: 1.5;
+		margin-top: $space-lg;
+		margin-bottom: $space-lg;
+	}
+
+	p {
+		font-weight: 400;
+		line-height: 1.25;
+		margin-top: $space-lg;
+		margin-bottom: $space-lg;
+	}
+
+	p,
+	b,
+	strong,
+	i,
+	em,
+	s,
+	del,
+	strike,
+	kbd,
+	ul,
+	ol,
+	a,
+	table,
+	:not(pre) {
+		> code[class*="language-"] {
+			font-size: 1rem;
+		}
+	}
+
+	hr {
+		margin: $space-lg 0;
+		border: 2px solid $color-secondary;
+	}
+
+	b,
+	strong {
+		font-weight: 700;
+	}
+
+	i,
+	em {
+		font-style: italic;
+	}
+
+	s,
+	del,
+	strike {
+		text-decoration: line-through;
+	}
+
+	kbd {
+		background-color: $color-gray-50;
+		border: 1px solid $color-gray-300;
+		border-bottom-color: $color-gray-500;
+		border-radius: 3px;
+		box-shadow: inset 0 -1px 0 $color-gray-50;
+		color: $color-gray-800;
+		display: inline-block;
+		line-height: 1rem;
+		padding: 2px 5px;
+		vertical-align: middle;
+	}
+
+	blockquote {
+		display: block;
+		margin: $space-lg 0 $space-lg 0;
+		padding: $space-lg 0 $space-lg $space-lg;
+		border-left: 3px solid $color-gray-500;
+		background-color: $color-gray-100;
+
+		> p {
+			font-size: 1.5rem;
+			font-weight: 100;
+			font-style: italic;
+		}
+	}
+
+	ul,
+	ol {
+		padding: 0;
+		margin: 0 0 0 $space-lg;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+
+	a {
+		color: $color-primary;
+		transition: color 0.2s ease-in-out;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $color-secondary;
+		}
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	table {
+		width: 100%;
+		padding: 0;
+		border-collapse: collapse;
+
+		tr {
+			margin: 0;
+			padding: 0;
+			background-color: white;
+			border-top: 1px solid $color-gray-400;
+
+			&:nth-child(2n) {
+				background-color: $color-gray-50;
+			}
+
+			th {
+				margin: 0;
+				padding: 5px 15px;
+				font-weight: bold;
+				text-align: left;
+				border: 1px solid $color-gray-400;
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			td {
+				margin: 0;
+				padding: 5px 15px;
+				text-align: left;
+				border: 1px solid $color-gray-400;
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {StaticQuery, graphql} from 'gatsby';
 import Header from './header';
-import Typography from '@material-ui/core/Typography';
-import './layout.scss';
+import Footer from './footer';
+import '../styles/layout.scss';
 
-const Layout = ({ children }) => (
+const Layout = ({children}) => (
 	<StaticQuery
 		query={graphql`
 			query SiteTitleQuery {
@@ -17,27 +17,15 @@ const Layout = ({ children }) => (
 			}
 		`}
 		render={data => (
-			<>
+			<div className="layout">
 				<Header siteTitle={data.site.siteMetadata.title} />
 
-				<div
-					style={{
-						margin: `0 auto`,
-						maxWidth: 960,
-						padding: `15px 15px 0`
-					}}
-				>
+				<div className="container">
 					{children}
-					<footer>
-						<Typography variant="body1" align="center">
-							© 2019, Built with&nbsp;
-							<a href="https://www.github.com/iamskok/gatsby-dev-blog-starter">
-								{data.site.siteMetadata.title}
-							</a>
-						</Typography>
-					</footer>
 				</div>
-			</>
+
+				<Footer siteTitle={data.site.siteMetadata.title} />
+			</div>
 		)}
 	/>
 );

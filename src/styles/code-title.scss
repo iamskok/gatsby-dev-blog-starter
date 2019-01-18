@@ -1,0 +1,17 @@
+@import 'variables';
+
+.gatsby-code-title {
+	position: relative;
+	z-index: 100;
+	margin-bottom: 0;
+	font-family: $font-mono;
+	font-style: italic;
+	font-size: 18px;
+	font-weight: 100;
+	text-align: center;
+	line-height: 24px;
+	letter-spacing: -1px;
+	color: rgba(#f8f8f2, 0.75);
+	background-color: darken(#282a36, 5%);
+	border-bottom: 1px solid #6272a4;
+}
