@@ -42,6 +42,10 @@ typings/
 # Optional npm cache directory
 .npm
 
+# Lock files
+yarn.lock
+package-lock.json
+
 # Optional eslint cache
 .eslintcache
 
@@ -70,3 +74,10 @@ yarn-error.log
 
 # Misc
 TODO.md
+
+# Sass
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+.DS_Store
