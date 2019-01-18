@@ -1,10 +1,10 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 import Layout from '../components/layout';
 import Card from '../components/card';
 import SEO from '../components/seo';
-import Typography from '@material-ui/core/Typography';
 
 const BlogPage = (props) => {
 	const posts = props.data.allMarkdownRemark.edges;
@@ -16,16 +16,17 @@ const BlogPage = (props) => {
 			<Typography gutterBottom variant="h3" component="h1">Blog page</Typography>
 
 			<Typography variant="body1" paragraph={true}>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex saepe odio quidem culpa 
-				fugit nostrum sit dolorum velit fuga placeat quo, perferendis explicabo expedita dolores 
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex saepe odio quidem culpa
+				fugit nostrum sit dolorum velit fuga placeat quo, perferendis explicabo expedita dolores
 				maiores eveniet.
 			</Typography>
 
-			<Grid container spacing={24}>
+			<Grid container spacing={32}>
 				{posts.map((post, index) => (
-					<Grid item xs={12} md={6} key={index}>
+					<Grid item key={index}>
 						<Card
 							title={post.node.frontmatter.title}
+							date={post.node.frontmatter.date}
 							excerpt={post.node.excerpt}
 							link={post.node.frontmatter.path}
 							cover={post.node.frontmatter.cover.childImageSharp.fluid}
@@ -34,7 +35,7 @@ const BlogPage = (props) => {
 				))}
 			</Grid>
 		</Layout>
-	)
+	);
 };
 
 export default BlogPage;
