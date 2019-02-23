@@ -49,9 +49,6 @@ Header.propTypes = {
 };
 
 export default withStyles({
-	root: {
-		marginBottom: 15
-	},
 	button: {
 		color: '#fff',
 		fontWeight: 100,
