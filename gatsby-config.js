@@ -1,8 +1,10 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Dev Blog Starter`,
-		description: `Gatsby starter to get up and running with personal web development blog`,
-		author: `@iamskok`,
+		title: 'Gatsby Dev Blog Starter',
+		description: 'Gatsby starter to get up and running with personal web development blog',
+		author: 'Vladimir Skok',
+		ghUser: 'iamskok',
+		ghRepo: 'gatsby-dev-blog-starter'
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
@@ -10,8 +12,8 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-					name: `markdown`,
-					path: `${__dirname}/src/content`,
+				name: `markdown`,
+				path: `${__dirname}/src/content`,
 			}
 		},
 		{
@@ -32,6 +34,7 @@ module.exports = {
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				plugins: [
+					`gatsby-remark-emoji-unicode`,
 					{
 						resolve: 'gatsby-remark-code-buttons',
 						options: {
