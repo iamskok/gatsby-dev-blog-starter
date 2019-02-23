@@ -51,7 +51,7 @@ _This is italic text_
 
 ## KBD
 
-<kbd>CMD</kbd> `+` <kbd>P</kbd>
+<kbd>command ⌘</kbd> + <kbd>option ⌥</kbd> + <kbd>P</kbd>
 
 ## Blockquotes
 

@@ -9,10 +9,9 @@ cover: "./cover.jpg"
 
 ### JS
 
+**`js:title=helloworld&copy=true`**
 
-**`js:copy=true:title=''`**
-
-```js:copy=true:title=''
+```js:title=helloworld&copy=true
 console.log('HELLO');
 console.log('WORLD');
 console.log('HELLO');
@@ -21,9 +20,9 @@ console.log('HELLO');
 console.log('WORLD');
 ```
 
-**`js:copy=true:title=index.js`**
+**`js:title=index.jsx&abc=false`**
 
-```js:copy=true:title=index.js4
+```js:title=index.jsx&abc=false
 console.log('HELLO');
 console.log('WORLD');
 console.log('HELLO');
@@ -32,9 +31,9 @@ console.log('HELLO');
 console.log('WORLD');
 ```
 
-**`js:title=index.js:copy=true`**
+**`js:title=index.jsx&clipboard=true`**
 
-```js:title=index.js:copy=true
+```js:title=index.js&clipboard=true
 console.log('HELLO');
 console.log('WORLD');
 console.log('HELLO');
@@ -43,9 +42,9 @@ console.log('HELLO');
 console.log('WORLD');
 ```
 
-**`js:title=index.js`**
+**`js:title=indexxxxx.js`**
 
-```js:title=index.js
+```js:title=indexxxxx.js
 console.log('HELLO');
 console.log('WORLD');
 console.log('HELLO');
@@ -54,9 +53,65 @@ console.log('HELLO');
 console.log('WORLD');
 ```
 
-**`js:copy=true`**
+**`js:clipboard=false`**
 
-```js:copy=true
+```js:clipboard=false
+console.log('HELLO');
+console.log('WORLD');
+console.log('HELLO');
+console.log('WORLD');
+console.log('HELLO');
+console.log('WORLD');
+```
+
+
+**`js`**
+
+```js
+console.log('HELLO');
+console.log('WORLD');
+console.log('HELLO');
+console.log('WORLD');
+console.log('HELLO');
+console.log('WORLD');
+```
+
+**`js:title=index.js&clipboard=false`**
+
+```js:title=index.js&clipboard=false
+console.log('HELLO');
+console.log('WORLD');
+console.log('HELLO');
+console.log('WORLD');
+console.log('HELLO');
+console.log('WORLD');
+```
+
+**`js:title=index.js&clipboard=false`**
+
+```js:title=index.js&clipboard=false
+console.log('HELLO');
+console.log('WORLD');
+console.log('HELLO');
+console.log('WORLD');
+console.log('HELLO');
+console.log('WORLD');
+```
+
+**`js:title=index.js&clipboard=false`**
+
+```js:title=index.js&clipboard=false
+console.log('HELLO');
+console.log('WORLD');
+console.log('HELLO');
+console.log('WORLD');
+console.log('HELLO');
+console.log('WORLD');
+```
+
+**`js`**
+
+```js
 console.log('HELLO');
 console.log('WORLD');
 console.log('HELLO');
@@ -69,7 +124,9 @@ console.log('WORLD');
 ---
 ---
 
-```js{1}:copy=true:highlight=true:share=fb399
+**`js{1}:clipboard=true&highlight=true&share=fb399`**
+
+```js{1}:clipboard=true&highlight=true&share=fb399
 console.log("4");
 	console.log('4');
        console.log(`4`);
@@ -77,14 +134,18 @@ console.log("4");
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe vero, blanditiis excepturi molestias soluta ut rem, at voluptatibus minus et, expedita sunt porro distinctio nam enim odio molestiae a ea.
 
-```js{1}:copy=true:highlight=true:share=vk19:title=example.js
+**`js{1}:clipboard=true&highlight=true&share=vk19&title=example.js`**
+
+```js{1}:clipboard=true&highlight=true&share=vk19&title=example.js
 const x = `Hello world`;
 const x = `Hello world`;
 ```
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe vero, blanditiis excepturi molestias soluta ut rem, at voluptatibus minus et, expedita sunt porro distinctio nam enim odio molestiae a ea.
 
-```js{1-3}:copy=true:title=index.jsx
+**`js{1-3}:clipboard=true&title=index.jsx`**
+
+```js{1-3}:clipboard=true&title=index.jsx
 const x = `Hello world`;
 const x = `Hello world`;
 const x = `Hello world`;
@@ -92,7 +153,9 @@ const x = `Hello world`;
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe vero, blanditiis excepturi molestias soluta ut rem, at voluptatibus minus et, expedita sunt porro distinctio nam enim odio molestiae a ea.
 
-```js{1}:title=index.js:copy=true
+*`js{1}:title=index.js&clipboard=true`*
+
+```js{1}:title=index.js&clipboard=true
 const x = `Hello world`;
 const x = `Hello world`;
 const x = `Hello world`;
@@ -100,7 +163,9 @@ const x = `Hello world`;
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-```css{3, 6, 8-9}
+*`css{2-8,10,13}:title=HEllo&clipboard=false`*
+
+```css{2-8,10,13}:title=HEllo&clipboard=false
 @font-face {
 	font-family: "Open Sans";
 	src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
@@ -122,7 +187,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 Lorem `html›<meta http-equiv="x-ua-compatible" content="ie=edge">` ipsum dolor sit amet, consectetur adipisicing elit. Porro itaque numquam tenetur assumenda nihil aspernatur `html›<noscript id="gatsby-noscript">JS me!</noscript>` corrupti natus. Quia vitae adipisci tempora! Voluptatum necessitatibus `html›<div class="yo">hi</div>`deserunt sed adipisci sit numquam labore iure.
 
-```html:title=index.html:copy=true:share=telegram5
+*`html:title=index.html&clipboard=true&share=telegram5`*
+
+```html:title=index.html&clipboard=true&share=telegram5
 <footer>
 	<p class="MuiTypography-root-74 MuiTypography-body1-83 MuiTypography-alignCenter-97">© 2019, Built with&nbsp;<a href="https://www.github.com/iamskok/gatsby-dev-blog-starter">Gatsby Dev Blog Starter</a></p>
 </footer>
@@ -130,7 +197,9 @@ Lorem `html›<meta http-equiv="x-ua-compatible" content="ie=edge">` ipsum dolor
 
 ### Sass code block example
 
-```sass{1-2,4,7-8}:copy=true:title=style.scss
+*`sass{1-2,4,7-8}:clipboard=true&title=style.scss`*
+
+```sass{1-2,4,7-8}:clipboard=true&title=style.scss
 $primary: #bada55;
 $secondary: 'red';
 
@@ -153,9 +222,9 @@ a: {
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed possimus, quidem rem ut tenetur earum totam facilis sint dignissimos inventore, commodi odit, perspiciatis non perferendis. Nisi quae necessitatibus, saepe commodi.
 
-#### css{1}:title=style.css:copy=true
+#### css{1}:title=style.css&clipboard=true
 
-```css{1}:title=style232145115.scss:copy=true
+```css{1}:title=style232145115.scss&clipboard=true
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -168,9 +237,9 @@ a:link, a:visited, a:hover, a:active {
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed possimus, quidem rem ut tenetur earum totam facilis sint dignissimos inventore, commodi odit, perspiciatis non perferendis. Nisi quae necessitatibus, saepe commodi.
 
-#### css{1}:test=foooooooo:copy=true:title=style.css
+#### css{1}:test=foooooooo&clipboard=true&title=style.css
 
-```css{1}:test=foooooo212222:copy=true:title=style1.css
+```css{1}:test=foooooo212222&clipboard=true&title=style1.css
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -181,9 +250,9 @@ a:link, a:visited, a:hover, a:active {
 }
 ```
 
-#### css{1}:test=foooooooo:title=style.css:copy=true
+#### css{1}:test=foooooooo&title=style.css&clipboard=true
 
-```css{1}:test=foooooooo222:title=style.css:copy=true
+```css{1}:test=foooooooo222&title=style.css&clipboard=true
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -194,9 +263,9 @@ a:link, a:visited, a:hover, a:active {
 }
 ```
 
-#### css{1}:copy=true:title=style.css:test=foooooooo
+#### css{1}:clipboard=true&title=style.css&test=foooooooo
 
-```css{1}:copy=true:title=style.css:test=foooooooo
+```css{1}:clipboard=true&title=style.css&test=foooooooo
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -207,9 +276,9 @@ a:link, a:visited, a:hover, a:active {
 }
 ```
 
-#### css{1}:title=style.css:test=foooooooo:copy=true
+#### css{1}:title=style.css&test=foooooooo&clipboard=true
 
-```css{1}:title=style.css:test=foooooooo:copy=true
+```css{1}:title=style.css&test=foooooooo&clipboard=true
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -220,9 +289,9 @@ a:link, a:visited, a:hover, a:active {
 }
 ```
 
-#### css{1}:title=style.css:copy=true:test=fooooooooo
+#### css{1}:title=style.css&clipboard=true&test=fooooooooo
 
-```css{1}:title=style.css:copy=true:test=fooooooo
+```css{1}:title=style.css&clipboard=true&test=fooooooo
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -233,9 +302,9 @@ a:link, a:visited, a:hover, a:active {
 }
 ```
 
-#### css:title=style.css:copy=true
+#### css:title=style.css&clipboard=true
 
-```css:title=style.css:copy=true
+```css:title=style.css&clipboard=true
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -246,9 +315,10 @@ a:link, a:visited, a:hover, a:active {
 }
 ```
 
-#### css:copy=true:title=style.css
+<!-- 
+#### css:clipboard=true:title=style.css
 
-```css:copy=true:title=style.css
+```css:clipboard=true:title=style.css
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -259,9 +329,9 @@ a:link, a:visited, a:hover, a:active {
 }
 ```
 
-#### css:copy=true:foo=bar
+#### css:clipboard=true:foo=bar
 
-```css:copy=true:foo=bar
+```css:clipboard=true:foo=bar
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -272,9 +342,9 @@ a:link, a:visited, a:hover, a:active {
 }
 ```
 
-#### css:foo=bar:copy=true
+#### css:foo=bar:clipboard=true
 
-```css:foo=bar:copy=true
+```css:foo=bar:clipboard=true
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -311,9 +381,9 @@ a:link, a:visited, a:hover, a:active {
 }
 ```
 
-#### css:test=gatsby:copy=true:title=style.css
+#### css:test=gatsby:clipboard=true:title=style.css
 
-```css:test=gatsby:copy=true:title=style.css
+```css:test=gatsby:clipboard=true:title=style.css
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -324,9 +394,9 @@ a:link, a:visited, a:hover, a:active {
 }
 ```
 
-#### css{}:test=gatsby:copy=true:title=style.css
+#### css{}:test=gatsby:clipboard=true:title=style.css
 
-```css{}:test=gatsby:copy=true:title=style.css
+```css{}:test=gatsby:clipboard=true:title=style.css
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -337,9 +407,9 @@ a:link, a:visited, a:hover, a:active {
 }
 ```
 
-#### css{1}:test=gatsby:copy=true:title=style.css
+#### css{1}:test=gatsby:clipboard=true:title=style.css
 
-```css{1}:test=gatsby:copy=true:title=style.css
+```css{1}:test=gatsby:clipboard=true:title=style.css
 a:link, a:visited, a:hover, a:active {
 	background-color: green;
 	color: white;
@@ -383,6 +453,8 @@ img {
 }
 ```
 
+---
+
 ```css{1}:title=style.css
 @font-face {
 	font-family: "Open Sans";
@@ -410,6 +482,8 @@ img {
 	}
 }
 ```
+
+---
 
 ```css:title=style.css
 @font-face {
@@ -443,7 +517,7 @@ img {
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. A enim pariatur `scss›$font-stack: Helvetica`cupiditate ipsum, neque consequatur `scss›@include transform(rotate(30deg))` rem id facilis hic voluptatum officiis totam dolor quis nemo dolores, adipisci fugiat. Officia, `scss›@mixin transform($property)` pariatur.
 
-```scss{3-4, 8}:copy=true
+```scss{3-4, 8}:clipboard=true
 @import 'reset';
 
 $font-stack: Helvetica, sans-serif;
@@ -483,7 +557,7 @@ body {
 
 Lorem ipsum `js›import React from "react";`dolor sit amet, consectetur adipisicing elit. Commodi quia in maiores neque! Error delectus illo `js›console.log('wow')` itaque natus quaerat quam hic obcaecati odit sit, iure exercitationem aperiam facere, tempore magni!
 
-```javascript{6-9}:copy=true
+```javascript{6-9}:clipboard=true
 import React from "react";
 import warning from "warning";
 import PropTypes from "prop-types";
@@ -1011,4 +1085,4 @@ Nulla minus, sunt eos accusamus reiciendis, dolorum quidem error consequuntur am
 
 ![Third image](3.jpg)
 
-Expedita quidem nisi, vero ad odio vel, vitae eligendi reiciendis recusandae minima harum eaque similique sapiente, temporibus facere. Quas, corporis nisi voluptatum praesentium explicabo cumque ipsum quibusdam cum quis odit!
+Expedita quidem nisi, vero ad odio vel, vitae eligendi reiciendis recusandae minima harum eaque similique sapiente, temporibus facere. Quas, corporis nisi voluptatum praesentium explicabo cumque ipsum quibusdam cum quis odit! -->
