@@ -5,8 +5,7 @@ body {
 	margin: 0;
 }
 
-.container {
-	overflow: hidden;
+.layout__container {
 	min-height: calc(100vh - #{$non-container-vh});
 	margin: 0 auto;
 	max-width: $container-max-width;

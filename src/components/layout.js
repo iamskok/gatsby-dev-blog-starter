@@ -20,7 +20,7 @@ const Layout = ({children}) => (
 			<div className="layout">
 				<Header siteTitle={data.site.siteMetadata.title} />
 
-				<div className="container">
+				<div className="layout__container">
 					{children}
 				</div>
 
