@@ -1,4 +1,5 @@
 module.exports = {
+	pathPrefix: "/gatsby-dev-blog-starter",
 	siteMetadata: {
 		title: 'Gatsby Dev Blog Starter',
 		description: 'Gatsby starter to get up and running with personal web development blog',
