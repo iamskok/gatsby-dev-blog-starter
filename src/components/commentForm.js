@@ -13,23 +13,6 @@ class CommentForm extends React.Component {
 			firebase.initializeApp(config);
 		}
 
-		// firebase.auth().onAuthStateChanged(user => {
-		// 	if (user) {
-		// 		// alert('User is logged in');
-		// 		console.log('User is logged from onAuthStateChanged()');
-		// 		const name = user.displayName;
-		// 		const email = user.email;
-		// 		const photoUrl = user.photoURL;
-		// 		const emailVerified = user.emailVerified;
-		// 		const uid = user.uid; 
-
-		// 		console.log(name, email, photoUrl, photoUrl, emailVerified, uid)
-		// 	} else {
-		// 		// alert('User is NOT logged in');
-		// 		console.log('User is NOT logged from onAuthStateChanged()');
-		// 	}
-		// });
-
 		this.state = {
 			textarea: '',
 			token: ''
@@ -77,7 +60,7 @@ class CommentForm extends React.Component {
 		this.setState({textarea: e.target.value})
 	}
 
-	addComment = (e) => {
+	sendComment = (e) => {
 		const text = this.state.textarea;
 		if (!text) {
 			return;
@@ -97,7 +80,8 @@ class CommentForm extends React.Component {
 				}
 			}
 		).then(response => {
-			this.props.update();
+			console.log('RESPONSE.DATA', response.data);
+			this.props.addComment(response.data);
 		}).catch(error => {
 			if (error.response.status === 401) {
 				localStorage.removeItem('firebase-token');
@@ -107,6 +91,10 @@ class CommentForm extends React.Component {
 			console.log('error', error);
 		});
 	}
+
+	// renderMarkdown = (e) => {
+	// 	this.state.textarea
+	// }
 
 	render() {
 		return (
@@ -129,7 +117,7 @@ class CommentForm extends React.Component {
 					:
 					<button
 						className="comment-form__add-comment"
-						onClick={this.addComment}
+						onClick={this.sendComment}
 						disabled={!this.state.textarea}
 					>
 						Comment

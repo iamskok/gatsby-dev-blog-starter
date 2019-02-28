@@ -3,3 +3,17 @@
 .comments {
 	margin-bottom: $space-lg;
 }
+
+.comments__btn {
+	display: flex;
+	margin-left: auto;
+	padding: $space-sm;
+	font-size: 16px;
+	color: #fff;
+	background-color: $color-primary-dark;
+	transition: opacity 0.2s ease-out;
+
+	&[disabled] {
+		opacity: 0.5;
+	}
+}

@@ -5,19 +5,48 @@ import { StaticQuery, graphql } from 'gatsby';
 import axios from 'axios';
 import '../styles/comments.scss';
 
+const PER_PAGE = 10;
+
 class Comments extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			comments: [],
-			loaded: false
+			loaded: false,
+			loading: false,
+			commentsLength: null,
+			offset: 0,
+			exhausted: false
 		}
 	}
 
-	update = () => {
+	loadComments = () => {
+		if (this.issuesURL === undefined || this.lastPage === undefined || this.state.loading) {
+			return;
+		}
 		this.setState({
-			loaded: false
+			loading: true
 		});
+
+		console.log('URL:', `${this.issuesURL}/comments?per_page=${PER_PAGE}&page=${this.lastPage - this.state.offset}`);
+		axios.get(
+			`${this.issuesURL}/comments?per_page=${PER_PAGE}&page=${this.lastPage - this.state.offset}`
+		).then(data => {
+			console.log('OFFSET', this.state.offset);
+
+			this.setState({
+				loading: false,
+				comments: [...this.state.comments, ...data.data.reverse()],
+				offset: this.state.offset + 1,
+				exhausted: this.lastPage - this.state.offset <= 1
+			});			
+		});
+	}
+
+	addComment = (comment) => {
+		this.setState({
+			comments: [comment, ...this.state.comments]
+		})
 	}
 
 	render() {
@@ -34,25 +63,43 @@ class Comments extends React.Component {
 					}
 				`}
 				render={data => {
-					this.url = `https://github.com/${data.site.siteMetadata.ghUser}/${data.site.siteMetadata.ghRepo}/issues/${this.props.issueId}`;
-					this.apiUrl = `https://api.github.com/repos/${data.site.siteMetadata.ghUser}/${data.site.siteMetadata.ghRepo}/issues/${this.props.issueId}/comments`;
-					axios.get(this.apiUrl).then(data => {
+					this.issuesURL = `https://api.github.com/repos/${data.site.siteMetadata.ghUser}/${data.site.siteMetadata.ghRepo}/issues/${this.props.issueId}`;
+					new Promise((resolve) => {
+						if (this.state.commentsLength === null) {
+							axios.get(this.issuesURL).then(data => {
+								this.setState({
+									commentsLength: data.data.comments
+								});
+
+								resolve(data.data.comments);
+							})
+						} else {
+							resolve(this.state.commentsLength);
+						}
+					}).then(length => {
+						this.lastPage = Math.ceil(length / PER_PAGE);
+						return axios.get(
+							`${this.issuesURL}/comments?per_page=${PER_PAGE}&page=${this.lastPage - this.state.offset}`
+						);
+					}).then(data => {
 						if (!this.state.loaded) {
 							this.setState({
 								comments: data.data.reverse(),
-								loaded: true
+								loaded: true,
+								offset: this.state.offset + 1
 							});
 						}
 					}).catch(e => {
 						console.error(e);
 					});
+
 					return (
 						<div className="comments">
 							<CommentForm
 								ghRepo={data.site.siteMetadata.ghRepo}
-								ghUser={data.site.siteMetadata.ghUser}	
+								ghUser={data.site.siteMetadata.ghUser}
 								issueId={this.props.issueId}
-								update={this.update}
+								addComment={this.addComment}
 							/>
 
 							{
@@ -68,6 +115,16 @@ class Comments extends React.Component {
 										ghUser={data.site.siteMetadata.ghUser}
 									/>
 								))
+							}
+
+							{
+								!this.state.exhausted && 
+								<button
+									className="comments__btn"
+									onClick={this.loadComments}
+								>
+									Load Comments
+								</button>
 							}
 						</div>
 					);
