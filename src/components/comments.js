@@ -27,13 +27,9 @@ class Comments extends React.Component {
 		this.setState({
 			loading: true
 		});
-
-		console.log('URL:', `${this.issuesURL}/comments?per_page=${PER_PAGE}&page=${this.lastPage - this.state.offset}`);
 		axios.get(
 			`${this.issuesURL}/comments?per_page=${PER_PAGE}&page=${this.lastPage - this.state.offset}`
 		).then(data => {
-			console.log('OFFSET', this.state.offset);
-
 			this.setState({
 				loading: false,
 				comments: [...this.state.comments, ...data.data.reverse()],

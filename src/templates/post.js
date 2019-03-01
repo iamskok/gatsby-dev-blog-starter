@@ -3,6 +3,7 @@ import {graphql} from 'gatsby';
 import Layout from '../components/layout';
 import Comments from '../components/comments';
 import Typography from '@material-ui/core/Typography';
+import {withStyles} from '@material-ui/core/styles';
 import '../styles/post.scss';
 
 export default function Template({data}) {
@@ -35,3 +36,4 @@ export const postQuery = graphql`
 		}
 	}
 `;
+

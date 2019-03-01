@@ -4,7 +4,6 @@ import { format, distanceInWordsToNow } from 'date-fns';
 import '../styles/comment.scss';
 
 const Comment = (props) => {
-	console.log('Comment props', props);
 	return (
 		<div className="comment">
 			<div className="comment__header">

@@ -15,7 +15,8 @@ class CommentForm extends React.Component {
 
 		this.state = {
 			textarea: '',
-			token: ''
+			token: '',
+			loaded: false
 		}
 	}
 
@@ -27,9 +28,18 @@ class CommentForm extends React.Component {
 			if (signIn) {
 				this._getToken().then(() => console.log('TOKEN from componentDidMount', this.state.token));
 				localStorage.removeItem('firebase-sign-in');
+			} else {
+				this.setState({
+					loaded: true
+				});
 			}
+			console.log(`componentDidMount() no token ${this.state}`)
 		} else {
-			this.setState({ token });
+			this.setState({
+				token,
+				loaded: true
+			});
+			console.log(`componentDidMount(): ${this.state}`)
 		}
 	}
 
@@ -41,17 +51,24 @@ class CommentForm extends React.Component {
 	}
 
 	_getToken = () => {
+		console.log(`_getToken: ${this.state}`)
 		return new Promise((resolve, reject) => {
 			firebase.auth().getRedirectResult().then(result => {
 				if (result.credential) {
 					const token = result.credential.accessToken;
-					this.setState({ token });
+					this.setState({
+						token,
+						loaded: true
+					});
 					localStorage.setItem('firebase-token', token);
 					return resolve();
 				}
-				reject('1st reject');
+				this.setState({
+					loaded: true
+				});
+				reject('Credentials are invalid.');
 			}).catch(error => {
-				reject('2nd reject');
+				reject('Firebase auth faild.');
 			});
 		});
 	}
@@ -98,32 +115,39 @@ class CommentForm extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<textarea
-					className="comment-form"
-					value={this.state.value}
-					onChange={this.handleChange}
-					disabled={!this.state.token}
-				>
-				</textarea>
-				{
-					!this.state.token ? 
-					<button 
-						className="comment-form__sign-in"
-						onClick={this.githubAuth}
+			<>
+			{
+				this.state.loaded ?
+				<div>
+					<textarea
+						className="comment-form"
+						value={this.state.value}
+						onChange={this.handleChange}
+						disabled={!this.state.token}
 					>
-						Sign in
-					</button>
-					:
-					<button
-						className="comment-form__add-comment"
-						onClick={this.sendComment}
-						disabled={!this.state.textarea}
-					>
-						Comment
-					</button>
-				}
-			</div>
+					</textarea>
+					{
+						!this.state.token ? 
+						<button 
+							className="comment-form__sign-in"
+							onClick={this.githubAuth}
+						>
+							Sign in
+						</button>
+						:
+						<button
+							className="comment-form__add-comment"
+							onClick={this.sendComment}
+							disabled={!this.state.textarea}
+						>
+							Comment
+						</button>
+					}
+				</div>
+				:
+				<div>Loading...</div>
+			}
+			</>
 		);
 	}
 }
