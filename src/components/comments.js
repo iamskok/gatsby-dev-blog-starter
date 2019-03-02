@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import axios from 'axios';
 import '../styles/comments.scss';
 
-const PER_PAGE = 10;
+const PER_PAGE = 30;
 
 class Comments extends React.Component {
 	constructor(props) {
