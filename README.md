@@ -15,7 +15,7 @@ Kick off your project with this development blog boilerplate. This starter ships
 * [Prettier](https://github.com/prettier/prettier) is an opinionated code formatter.
 * [React Headroom](https://github.com/KyleAMathews/react-headroom) - hides page header until it's needed.
 * [React Helmet](https://github.com/nfl/react-helmet) add `<head>` to React.
-* [Dracula syntax highlighting theme](https://github.com/iamskok/gatsby-prismjs-dracula) with [code block titles](https://github.com/DSchau/gatsby-remark-code-titles) and [copy buttons](https://github.com/DSchau/gatsby-remark-code-buttons)
+* [Dracula syntax highlighting theme](https://github.com/iamskok/gatsby-prismjs-dracula) with [code block titles](https://github.com/DSchau/gatsby-remark-code-titles) and [copy buttons](https://github.com/iamskok/gatsby-remark-code-buttons)
 * GitHub Comments. The original idea was taken from [donw.io](http://donw.io/post/github-comments/).
 * [Gatsby Images](https://www.gatsbyjs.org/packages/gatsby-image/) optimized for the theme layout.
 * [Emoji](https://www.gatsbyjs.org/packages/gatsby-remark-emoji-unicode/) support 🎉.
