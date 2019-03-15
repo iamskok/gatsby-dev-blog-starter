@@ -1,24 +1,244 @@
 @import 'variables';
 
 .comment-form {
-	margin-bottom: $space-md;
+	display: block;
 	width: 100%;
-	height: 90px;
-	padding: 0;
+	height: 100px;
+	padding: $space-md;
+	font-family: $font-roboto;
+	font-size: 16px;
 	border: 1px solid $color-primary-dark;
 	resize: none;
+	overflow-x: hidden;
+	overflow-y: auto;
+	transition: height 0.2s ease-out;
+
+	&.is-active {
+		transition: height 0.2s ease-in;
+		height: 300px;
+	}
 
 	&[focus] {
 		outline: auto 2px Highlight;
 		outline: auto 5px -webkit-focus-ring-color;
 	}
+
+	pre {
+		margin: 0 0 $space-md 0;
+		padding: $space-md;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	h1 {
+		font-size: 3.8rem;
+	}
+	
+	h2 {
+		font-size: 2.2rem;
+	}
+
+	h3 {
+		font-size: 1.85rem;
+	}
+
+	h4,
+	h5,
+	h6 {
+		font-size: 1.4rem;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: 400;
+		line-height: 1.5;
+		// margin-top: $space-lg;
+		margin-top: 0;
+		margin-bottom: $space-lg;
+	}
+
+	p {
+		font-weight: 400;
+		line-height: 1.25;
+		margin-bottom: $space-md;
+
+		&:nth-of-type(1) {
+			@at-root {
+				div & {
+					margin-top: -1px;
+				}
+			}
+		}	
+	}
+
+	p,
+	b,
+	strong,
+	i,
+	em,
+	s,
+	del,
+	strike,
+	kbd,
+	ul,
+	ol,
+	a,
+	table {
+		font-size: 1rem;
+	}
+
+	:not(pre) {
+		> code[class*="language-"] {
+			font-size: 1rem;
+		}
+	}
+
+	hr {
+		margin: $space-md 0;
+		border: 2px solid $color-secondary;
+	}
+
+	b,
+	strong {
+		font-weight: 700;
+	}
+
+	i,
+	em {
+		font-style: italic;
+	}
+
+	s,
+	del,
+	strike {
+		text-decoration: line-through;
+	}
+
+	kbd {
+		background-color: $color-gray-50;
+		border: 1px solid $color-gray-300;
+		border-bottom-color: $color-gray-500;
+		border-radius: 3px;
+		box-shadow: inset 0 -1px 0 $color-gray-50;
+		color: $color-gray-800;
+		display: inline-block;
+		line-height: 1rem;
+		padding: 2px 5px;
+		vertical-align: middle;
+	}
+
+	blockquote {
+		display: block;
+		margin: $space-md 0 $space-md 0;
+		padding: $space-md 0 $space-md $space-md;
+		border-left: 3px solid $color-gray-500;
+		background-color: $color-gray-100;
+
+		> p {
+			font-size: 1.5rem;
+			font-weight: 100;
+			font-style: italic;
+		}
+	}
+
+	ul,
+	ol {
+		padding: 0;
+		margin: 0 0 0 $space-lg;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+
+	a {
+		color: $color-secondary-light;
+		transition: color 0.2s ease-in-out;
+
+		&:hover,
+		&:active,
+		&:focus {
+			color: $color-secondary;
+		}
+	}
+
+	img,
+	iframe {
+		max-width: 100%;
+	}
+
+	iframe {
+		display: block;
+		margin: 0 auto;
+	}
+
+	table {
+		width: 100%;
+		padding: 0;
+		border-collapse: collapse;
+
+		tr {
+			margin: 0;
+			padding: 0;
+			background-color: #fff;
+
+			&:nth-child(2n) {
+				background-color: $color-gray-100;
+			}
+
+			th,
+			td {
+				margin: 0;
+				padding: $space-xs;
+				text-align: left;
+				border: 1px solid $color-gray-400;
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				@media('sm') {
+					padding: $space-xs $space-md;
+				}
+			}
+
+			th {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+.comment-form__header-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.comment-form__preview {
+	display: flex;
+	margin-right: $space-xs;
+	padding: $space-xs;
+	font-size: 16px;
+	color: #fff;
+	background-color: $color-secondary;
+	border: none;
+	transition: opacity 0.2s ease-out;
 }
 
 .comment-form__sign-in,
 .comment-form__add-comment {
 	display: flex;
-	margin-left: auto;
-	padding: $space-sm;
+	margin: $space-xl auto;
+	padding: $space-sm $space-xl;
 	font-size: 16px;
 	color: #fff;
 	background-color: $color-primary;
@@ -26,5 +246,42 @@
 
 	&[disabled] {
 		opacity: 0.5;
+	}
+}
+
+.comment-form__progress-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 340px;
+}
+
+.comment-form__progress {}
+
+.comment-form__header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0;
+	width: 100%;
+	height: $space-xl;
+	background-color: $color-primary;
+	border: 1px solid $color-primary-dark;
+	border-bottom: none;
+}
+
+.comment-form__avatar {
+	margin-right: $space-xs;
+	width: calc(#{$space-xl} - 1px);
+	height: calc(#{$space-xl} - 1px);
+}
+
+.comment-form__author {
+	color: $color-secondary-light;
+	transition: color 0.2s ease-in-out;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color-secondary;
 	}
 }

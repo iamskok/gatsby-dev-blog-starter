@@ -114,7 +114,7 @@ class Comments extends React.Component {
 							}
 
 							{
-								!this.state.exhausted && 
+								!this.state.exhausted && this.state.loaded &&
 								<button
 									className="comments__btn"
 									onClick={this.loadComments}

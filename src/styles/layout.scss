@@ -1,12 +1,26 @@
 @import 'media';
 @import 'variables';
 
+html {
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+
+	&:before,
+	&:after {
+		box-sizing: inherit;
+	}
+}
+
 body {
 	margin: 0;
 }
 
 .layout__container {
-	min-height: calc(100vh - #{$non-container-vh});
+	// min-height: calc(100vh - #{$non-container-vh});
+	min-height: calc(100vh - 130px);
 	margin: 0 auto;
 	max-width: $container-max-width;
 	padding: 0 $space-md 0;

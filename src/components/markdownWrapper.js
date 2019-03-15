@@ -48,9 +48,25 @@ export default function(Component) {
 				.processSync(props.body)
 				.toString();
 
+			console.log('props.body', props.body);
+			console.log('body after', body);
+
 			return (
 				<Component {...this.props} body={body} />
 			);
 		}	
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
