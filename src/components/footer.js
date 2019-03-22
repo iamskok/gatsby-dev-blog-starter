@@ -23,6 +23,7 @@ const Footer = (props) => {
 
 export default withStyles({
 	root: {
+		position: 'relative',
 		display: 'flex',
 		height: 57,
 		justifyContent: 'center',
