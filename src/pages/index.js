@@ -3,30 +3,43 @@ import {Link, graphql} from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Typography from '@material-ui/core/Typography';
+import Particles from '../components/particles';
+// import Particles from 'react-particles-js';
+import Intro from '../components/intro';
+import {StyleRoot} from 'radium';
 
 const IndexPage = (props) => {
 	const posts = props.data.allMarkdownRemark.edges;
 
 	return (
-		<Layout>
-			<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-			
-			<Typography gutterBottom variant="h3" component="h1">Home page</Typography>
+		<StyleRoot>
+			<Layout>
+				<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+				<Intro
+					typedTexts={['React', 'Node.js', 'Gatsby', 'WordPress']}
+					fixedText="Frontend engineer experienced with # techology"
+					separator="#"
+				/>
+				<Particles />
+				{/*Particles
+					params={{
+						particles: {
+							line_linked: {
+								shadow: {
+									enable: true,
+									color: '#ff0000',
+									blur: 0.001
+								}
+							}
+						},
+						retina_detect: true
+					}}
 
-			<Typography variant="body1" paragraph={true}>
-				Welcome to your new Gatsby dev blog. Now go build something great
-			</Typography>
-
-			<ul>
-				{posts.map(post => (
-				<li key={post.node.frontmatter.path}>
-					<Typography variant="body1">
-						<Link to={post.node.frontmatter.path}>{post.node.frontmatter.title}</Link>
-					</Typography>
-				</li>
-				))}
-			</ul>
-		</Layout>
+					width={'100%'}
+					height={'calc(100vh - 130px)'}
+				/>*/}
+			</Layout>
+		</StyleRoot>
 	)
 };
 
