@@ -28,7 +28,6 @@
     "node-sass": "^4.11.0",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
-    "radium": "^0.25.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-headroom": "^2.2.4",
