@@ -14,7 +14,7 @@ export default function Template({data}) {
 			<PageTitle title={frontmatter.title} />
 			<PageSubtitle text={frontmatter.date} />
 			<div dangerouslySetInnerHTML={{ __html: html }} className="post" />
-			{frontmatter.issue ? <Comments issueId={frontmatter.issue} /> : ''}
+			{/*{frontmatter.issue ? <Comments issueId={frontmatter.issue} /> : ''}*/}
 		</Layout>
 	)
 };
