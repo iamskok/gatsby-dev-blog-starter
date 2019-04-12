@@ -1,14 +1,11 @@
 import React from 'react';
-import firebase from 'firebase/app';
+import firebase from 'firebase';
 import axios from 'axios';
-import config from '../../.firebaseConfig';
-// import classNames from 'classnames';
-// import { withStyles } from '@material-ui/core/styles';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import config from '../../.firebase';
 import markdownWrapper from './markdownWrapper';
-// import green from '@material-ui/core/colors/green';
 import 'firebase/auth';
 import '../styles/comment-form.scss';
+import '../styles/spinner.scss';
 
 const Preview = markdownWrapper(props => {
 	return (
@@ -118,16 +115,15 @@ class CommentForm extends React.Component {
 	}
 
 	handleChange = (e) => {
-		this.setState({textarea: e.target.value})
+		if (this.state.token) {
+			this.setState({textarea: e.target.value})
+		}
 	}
 
 	handleFocus = (e) => {
-		// setTimeout(() => {
-		// 	this.setState({focus: true});
-		// 	console.log('setTimeput handleFocus', e.target);	
-		// }, 3000)
-		// console.log('handleFocus', e.target);
-		this.setState({focus: true});
+		if (this.state.token) {
+			this.setState({focus: true});
+		}
 	}
 
 	handleBlur = (e) => {
@@ -253,7 +249,7 @@ class CommentForm extends React.Component {
 					</div>
 					:
 					<div className="comment-form__progress-container">
-						<CircularProgress size={24} className="comment-form__progress" />
+						<div className="spinner"></div>
 					</div>
 				}
 			</>
