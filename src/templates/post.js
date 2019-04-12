@@ -1,9 +1,9 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 import Layout from '../components/layout';
-import Comments from '../components/comments';
-import Typography from '@material-ui/core/Typography';
-import {withStyles} from '@material-ui/core/styles';
+// import Comments from '../components/comments';
+import PageTitle from '../components/pageTitle';
+import PageSubtitle from '../components/pageSubtitle';
 import '../styles/post.scss';
 
 export default function Template({data}) {
@@ -11,13 +11,9 @@ export default function Template({data}) {
 	const {frontmatter, html} = markdownRemark;
 	return (
 		<Layout>
-			<Typography gutterBottom variant="h3" component="h1">
-				{frontmatter.title}
-			</Typography>
-			<Typography gutterBottom variant="h6">{frontmatter.date}</Typography>
-
+			<PageTitle title={frontmatter.title} />
+			<PageSubtitle text={frontmatter.date} />
 			<div dangerouslySetInnerHTML={{ __html: html }} className="post" />
-
 			{frontmatter.issue ? <Comments issueId={frontmatter.issue} /> : ''}
 		</Layout>
 	)
