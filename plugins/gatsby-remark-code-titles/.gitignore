@@ -1,8 +1,0 @@
-node_modules
-
-/*.js
-!/.babelrc.js
-!/.huskyrc.js
-!/lint-staged.config.js
-
-*.log
