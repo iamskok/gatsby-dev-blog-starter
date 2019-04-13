@@ -1,7 +1,7 @@
 import React from 'react';
 import firebase from 'firebase';
 import axios from 'axios';
-import config from '../../.firebaseConfig';
+import config from '../../.firebase';
 import markdownWrapper from './markdownWrapper';
 import 'firebase/auth';
 import '../styles/comment-form.scss';
@@ -174,8 +174,6 @@ class CommentForm extends React.Component {
 		if (this.state.token) {
 			currentUser = this._getCurrentUser();
 		}
-
-		console.log('=============', this.state.focus);
 
 		return (
 			<>
