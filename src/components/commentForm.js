@@ -1,7 +1,7 @@
 import React from 'react';
 import firebase from 'firebase';
 import axios from 'axios';
-import config from '../../.firebase';
+import config from '../../.firebaseConfig';
 import markdownWrapper from './markdownWrapper';
 import 'firebase/auth';
 import '../styles/comment-form.scss';
