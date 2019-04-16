@@ -80,7 +80,6 @@ class CommentForm extends React.Component {
 	_getToken = () => {
 		return new Promise((resolve, reject) => {
 			firebase.auth().getRedirectResult().then(result => {
-				console.log('RESULTTTT', result);
 				if (result.credential) {
 					const token = result.credential.accessToken;
 					const username = result.additionalUserInfo.username;
@@ -106,14 +105,6 @@ class CommentForm extends React.Component {
 		});
 	}
 
-	_getCurrentUser = () => {
-		const user = firebase.auth().currentUser;
-		console.log('USERRRRRR', user);
-		if (user) {
-			return user.photoURL;
-		}
-	}
-
 	handleChange = (e) => {
 		if (this.state.token) {
 			this.setState({textarea: e.target.value})
@@ -127,7 +118,6 @@ class CommentForm extends React.Component {
 	}
 
 	handleBlur = (e) => {
-		// console.log('handleBlur', e.target);
 		this.setState({focus: false});
 	}
 
@@ -157,7 +147,6 @@ class CommentForm extends React.Component {
 			this.props.addComment(response.data);
 			this.handleBlur();
 		}).catch(error => {
-			console.log('error', error);
 			if (error.response.status === 401) {
 				localStorage.removeItem('firebase-token');
 				localStorage.removeItem('firebase-sign-in');
@@ -165,16 +154,11 @@ class CommentForm extends React.Component {
 				localStorage.removeItem('github-username');
 				this.setState({ token: '' });
 			}
-			console.log('error', error);
+			console.error(error);
 		});
 	}
 
 	render() {
-		let currentUser = null;
-		if (this.state.token) {
-			currentUser = this._getCurrentUser();
-		}
-
 		return (
 			<>
 				{
@@ -189,7 +173,7 @@ class CommentForm extends React.Component {
 							<div className="comment-form__header-container">
 								{
 									this.state.token &&
-									<img src={this.state.avatar} className="comment-form__avatar" />
+									<img src={this.state.avatar} alt="Comment author avatar" className="comment-form__avatar" />
 								}
 								{
 									this.state.token &&

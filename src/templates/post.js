@@ -14,6 +14,13 @@ export default function Template({data}) {
 			<PageTitle title={frontmatter.title} />
 			<PageSubtitle text={frontmatter.date} />
 			<div dangerouslySetInnerHTML={{ __html: html }} className="post" />
+			<a
+				className="twitter-share-button"
+				href="https://twitter.com/intent/tweet"
+				data-size="large"
+			>
+				Tweet
+			</a>
 			{frontmatter.issue ? <Comments issueId={frontmatter.issue} /> : ''}
 		</Layout>
 	)

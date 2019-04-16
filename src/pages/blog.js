@@ -1,7 +1,5 @@
 import React from 'react';
 import {graphql} from 'gatsby';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import PageTitle from '../components/pageTitle';
 import PageSubtitle from '../components/pageSubtitle';
 import Layout from '../components/layout';

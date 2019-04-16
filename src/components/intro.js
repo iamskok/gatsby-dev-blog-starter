@@ -36,8 +36,6 @@ class Intro extends Component {
 	}
 
 	erase = () => {
-		const L = this.typedTexts.length;
-		const itemNum = this.state.itemNum;
 		const symNum = this.state.symNum;
 		
 		if (this.state.current) {
