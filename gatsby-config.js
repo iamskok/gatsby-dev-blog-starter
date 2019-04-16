@@ -10,6 +10,7 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-sass`,
+		`gatsby-plugin-twitter`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -37,10 +38,7 @@ module.exports = {
 				plugins: [
 					`gatsby-remark-emoji-unicode`,
 					{
-						resolve: 'gatsby-remark-code-buttons',
-						options: {
-							tooltip: 'Click to copy 💾'
-						}
+						resolve: 'gatsby-remark-code-buttons'
 					},
 					`gatsby-remark-code-titles`,
 					`gatsby-remark-autolink-headers`,
