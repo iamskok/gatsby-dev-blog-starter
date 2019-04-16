@@ -1,13 +1,13 @@
 @import 'variables';
 
 .comments {
-	margin-bottom: $space-lg;
 	width: 100%;
 }
 
 .comments__btn {
 	display: flex;
-	margin-left: auto;
+	margin: $space-xl auto;
+    padding: $space-sm $space-xl;
 	padding: $space-sm;
 	font-size: 16px;
 	color: #fff;

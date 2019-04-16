@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Particles from 'react-particles-js';
 import '../styles/particles.scss';
+import particlesConfig from '../json/particlesConfig.json';
 
 const particleStyles = {
 	base: {
@@ -8,7 +9,8 @@ const particleStyles = {
 		backgroundIimage: 'url("")',
 		backgroundSize: 'cover',
 		backgroundPosition: '50% 50%',
-		backgroundRepeat: 'no-repeat'
+		backgroundRepeat: 'no-repeat',
+		marginTop: 65
 	}
 };
 
@@ -17,19 +19,7 @@ export default class extends Component {
 		return (
 			<div className="particles">
 				<Particles
-					params={{
-						particles: {
-							line_linked: {
-								shadow: {
-									enable: true,
-									color: '#ff0000',
-									blur: 0.001
-								}
-							}
-						},
-						retina_detect: true
-					}}
-
+					params={particlesConfig}
 					style={particleStyles.base}
 					width={'100%'}
 					height={'calc(100vh - 130px)'}

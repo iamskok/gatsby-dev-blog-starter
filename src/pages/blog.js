@@ -60,6 +60,28 @@ export const pageQuery = graphql`
 								srcSetBreakpoints: [
 									290,
 									330,
+									380,
+									435,
+									495,
+									570,
+									610,
+									660,
+									725,
+									780,
+									825,
+									880,
+									950,
+									1100,
+									1160,
+									1225,
+									1320,
+									1470,
+									1560,
+									1715,
+									1830,
+									1960,
+									2135,
+									2440
 							]) {
 								...GatsbyImageSharpFluid_withWebp
 							}

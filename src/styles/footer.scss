@@ -1,0 +1,56 @@
+@import 'variables';
+
+.footer {
+	height: 65px;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	background-color: $color-primary-dark;
+}
+
+.footer__text {
+	color: #fff;
+	font-family: $font-roboto;
+	font-weight: 100;
+}
+
+.footer__link {
+	color: #fff;
+	text-decoration: none;
+	transition: color 0.1s linear;
+
+	&:hover {
+		color: $color-secondary;
+	}
+}
+
+//     height: 64px;
+// }
+// }
+// <style>…</style>
+// .Footer-root-1 {
+//     height: 57px;
+//     display: flex;
+//     position: relative;
+//     align-items: center;
+//     justify-content: center;
+//     background-color: #1a237e;
+
+
+//  color: #fff;
+//     font-weight: 100;
+// }
+
+// <style>…</style>
+// .MuiTypography-alignCenter-27 {
+//     text-align: center;
+// }
+// <style>…</style>
+// .MuiTypography-body1-13 {
+//     color: rgba(0, 0, 0, 0.87);
+//     font-size: 1rem;
+//     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+//     font-weight: 400;
+//     line-height: 1.5;
+//     letter-spacing: 0.00938em;

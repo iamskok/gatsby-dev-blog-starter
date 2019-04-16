@@ -4,6 +4,8 @@
 .post {
 	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 	color: rgba(0, 0, 0, 0.87);
+	width: 100%;
+	max-width: $container-max-width - $space-md * 2;
 
 	pre {
 		margin: 0 0 $space-md 0;

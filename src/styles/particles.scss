@@ -1,4 +1,5 @@
-@import 'media'; 
+@import 'media';
+@import 'variables';
 
 .particles {
 	position: absolute;
@@ -6,12 +7,7 @@
 	bottom: 0;
 	left: 0;
 	right: 0;	
-	background: lightblue;
+	background: $color-secondary-dark;
 	width: 100%;
-	height: calc(100vh - 116px);
-	margin-top: 57px;
-
-	@include media('sm') {
-		margin-top: 64px;
-	}
+	height: 100vh;
 }

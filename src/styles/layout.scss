@@ -18,17 +18,18 @@ body {
 	margin: 0;
 }
 
+.layout {
+	height: 100vh;
+	overflow-y: auto;
+}
+
 .layout__container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	min-height: calc(100vh - 116px);
-	margin: 0 auto;
+	min-height: calc(100vh - 133px);
+	margin: 65px auto 0;
 	max-width: $container-max-width;
-	padding: 0 $space-md 0;
-
-	@include media('sm') {
-		min-height: calc(100vh - 130px);
-	}
+	padding: 0 $space-md;
 }

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import '../styles/intro.scss';
 
 class Intro extends Component {
@@ -59,12 +60,27 @@ class Intro extends Component {
 		const [before, after] = this.fixedText.split(this.separator);
 
 		return (
-			<div className="intro">
-				<h1 className="intro__header">Vladimir Skok</h1>
-				<div className="intro__type-container">
-					<div className="intro__type">{`${before} ${this.state.current} ${after}`}</div>
-				</div>
-			</div>
+			<StaticQuery
+				query={graphql`
+					query IntroQuery {
+						site {
+							siteMetadata {
+								author
+							}
+						}
+					}
+				`}
+				render={data => {
+					return (
+						<div className="intro">
+							<h1 className="intro__header">{data.site.siteMetadata.author}</h1>
+							<div className="intro__type-container">
+								<div className="intro__type">{`${before} ${this.state.current} ${after}`}</div>
+							</div>
+						</div>
+					);
+				}}
+			/>
 		);
 	}
 }
