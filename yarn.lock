@@ -5422,6 +5422,14 @@ gatsby-remark-autolink-headers@^2.0.13:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.3.0"
 
+gatsby-remark-code-buttons@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-code-buttons/-/gatsby-remark-code-buttons-1.1.0.tgz#3dfa83437f06f62ff39158e14f0eb8afee49d471"
+  integrity sha512-gIccs06j4yFnP8DQ8NhnoRiNEFsfhD6zDJi6F+F4Waz/I87UHHu6Fut9Wi/pzDOd0eQQfJ73ynG6uWf62g93tw==
+  dependencies:
+    query-string "^6.2.0"
+    unist-util-visit "^1.4.0"
+
 gatsby-remark-code-titles@^1.1.0-rc.0:
   version "1.1.0-rc.0"
   resolved "https://registry.yarnpkg.com/gatsby-remark-code-titles/-/gatsby-remark-code-titles-1.1.0-rc.0.tgz#8992211d9799edae21f597aa3dcf28a97d882654"
@@ -10256,6 +10264,15 @@ query-string@^6.1.0:
   version "6.4.2"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.4.2.tgz#8be1dbd105306aebf86022144f575a29d516b713"
   integrity sha512-DfJqAen17LfLA3rQ+H5S4uXphrF+ANU1lT2ijds4V/Tj4gZxA3gx5/tg1bz7kYCmwna7LyJNCYqO7jNRzo3aLw==
+  dependencies:
+    decode-uri-component "^0.2.0"
+    split-on-first "^1.0.0"
+    strict-uri-encode "^2.0.0"
+
+query-string@^6.2.0:
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.5.0.tgz#2e1a70125af01f6f04573692d02c09302a1d8bfc"
+  integrity sha512-TYC4hDjZSvVxLMEucDMySkuAS9UIzSbAiYGyA9GWCjLKB8fQpviFbjd20fD7uejCDxZS+ftSdBKE6DS+xucJFg==
   dependencies:
     decode-uri-component "^0.2.0"
     split-on-first "^1.0.0"
