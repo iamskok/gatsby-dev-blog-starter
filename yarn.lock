@@ -5422,10 +5422,10 @@ gatsby-remark-autolink-headers@^2.0.13:
     mdast-util-to-string "^1.0.2"
     unist-util-visit "^1.3.0"
 
-gatsby-remark-code-buttons@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-code-buttons/-/gatsby-remark-code-buttons-1.1.0.tgz#3dfa83437f06f62ff39158e14f0eb8afee49d471"
-  integrity sha512-gIccs06j4yFnP8DQ8NhnoRiNEFsfhD6zDJi6F+F4Waz/I87UHHu6Fut9Wi/pzDOd0eQQfJ73ynG6uWf62g93tw==
+gatsby-remark-code-buttons@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-code-buttons/-/gatsby-remark-code-buttons-1.1.1.tgz#7b6f693482b6e4d429fdb13067a77405aa87c180"
+  integrity sha512-JuwfH7lN3HDZueRE1ZVhvUoZWwfYn9RdN0tfvhYGQEy1K2GZWjMIKdWew5QyED6kHVHQP/BmcQ/XI9mCCe3WRg==
   dependencies:
     query-string "^6.2.0"
     unist-util-visit "^1.4.0"
