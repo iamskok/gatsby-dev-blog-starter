@@ -11,22 +11,17 @@
 	padding: 0;
 	width: 100vw;
 	font-family: monospace;
-	font-size: 11vw;
-	font-weight: 100;
+	font-size: 18vw;
+	font-weight: 700;
 	text-align: center;
-	background: linear-gradient(#fff, $color-primary-dark);
-	background: -webkit-linear-gradient(#fff, $color-primary-dark);
-	background: -moz-linear-gradient(#fff, $color-primary-dark);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	text-fill-color: transparent;
-	-moz-text-fill-color: transparent;
-	-webkit-text-fill-color: transparent;
+	text-transform: uppercase;
+	color: #fff;
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.85);
 }
 
 .intro__type {
 	display: inline-block;
+	color: #fff;
 	font-family: monospace;
 	font-size: 3vw;
 	text-align: center;

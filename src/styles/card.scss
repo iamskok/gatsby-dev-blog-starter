@@ -2,6 +2,7 @@
 @import 'media';
 
 .card {
+	width: 100%;
 	border: 1px solid $color-gray-200;
 	transition: 0.2s border linear;
 	margin: 0 -1 * $space-md $space-lg;
