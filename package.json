@@ -51,8 +51,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "deploy": "npm run prebuild && gatsby build --prefix-paths && gh-pages -d public",
-    "build": "gatsby build",
+    "build": "npm run prebuild && gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
