@@ -59,7 +59,7 @@
     "commit": "git-cz",
     "release": "standard-version",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "postinstall": "cd plugins/gatsby-remark-code-buttons/ && yarn"
+    "prebuild": "cd plugins/gatsby-remark-code-buttons/ && yarn"
   },
   "devDependencies": {
     "commitizen": "^3.0.5",
