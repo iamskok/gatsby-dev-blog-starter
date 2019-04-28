@@ -1,2 +1,10 @@
+[settings]
+	ID = "fbe445b2-665a-4b6b-befb-98c0249e523e"
 [build]
+  publish = "public"
+  command = "yarn build"
   functions = ".netlify/functions"
+[build.environment]
+  NODE_VERSION = "11.5.0"
+  YARN_VERSION = "1.3.2"
+  YARN_FLAGS = "--no-ignore-optional"
