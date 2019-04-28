@@ -40,7 +40,7 @@ module.exports = {
 				plugins: [
 					`gatsby-remark-emoji-unicode`,
 					{
-						resolve: path.join(__dirname, './plugins', '/gatsby-remark-code-buttons'),
+						resolve: 'gatsby-remark-code-buttons',
 						options: {
 							toasterText: 'Copied to clipboard',
 							toasterDuration: 5000
