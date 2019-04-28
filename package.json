@@ -17,7 +17,6 @@
     "gatsby-plugin-twitter": "^2.0.13",
     "gatsby-prismjs-dracula": "^0.1.15",
     "gatsby-remark-autolink-headers": "^2.0.13",
-    "gatsby-remark-code-buttons": "^1.0.1",
     "gatsby-remark-code-titles": "^1.1.0-rc.0",
     "gatsby-remark-emoji-unicode": "^0.1.0",
     "gatsby-remark-images": "^3.0.3",
@@ -52,7 +51,6 @@
   ],
   "license": "MIT",
   "scripts": {
-    "now-build": "npm run build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -60,7 +58,8 @@
     "format": "prettier --write \"src/**/*.js\"",
     "commit": "git-cz",
     "release": "standard-version",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "postinstall": "cd plugins/gatsby-remark-code-buttons/ && yarn"
   },
   "devDependencies": {
     "commitizen": "^3.0.5",
