@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
 	pathPrefix: "/gatsby-dev-blog-starter",
 	siteMetadata: {
@@ -38,7 +40,7 @@ module.exports = {
 				plugins: [
 					`gatsby-remark-emoji-unicode`,
 					{
-						resolve: 'gatsby-remark-code-buttons',
+						resolve: path.resolve(__dirname, 'plugins/gatsby-remark-code-buttons'),
 						options: {
 							toasterText: 'Copied to clipboard',
 							toasterDuration: 5000
