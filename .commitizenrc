@@ -13,9 +13,8 @@ module.exports = {
 	scopes: [
 		{ name: 'git' },
 		{ name: 'build' },
-		{ name: 'model' },
-		{ name: 'controller' },
-		{ name: 'view' }
+		{ name: 'view' },
+		{ name: 'content' }
 	],
 
 	messages: {
