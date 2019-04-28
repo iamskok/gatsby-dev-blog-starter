@@ -24,7 +24,7 @@ exports.onClientEntry = () => {
     }
   }
 
-  window.showClipboardToaster = (toasterId, toasterDuration) => {
+  window.showClipboardToaster = toasterId => {
     const textElem = document.querySelector(`[data-toaster-id="${toasterId}"]`);
 
     if (!textElem) {
@@ -43,6 +43,6 @@ exports.onClientEntry = () => {
     document.body.appendChild(el);
     setTimeout(() => {
       document.body.removeChild(el);
-    }, toasterDuration)
+    }, textElem.dataset.toasterDuration);
   }
 }
