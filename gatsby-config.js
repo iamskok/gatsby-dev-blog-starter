@@ -1,9 +1,9 @@
 module.exports = {
 	pathPrefix: "/gatsby-dev-blog-starter",
 	siteMetadata: {
-		title: 'Gatsby Dev Blog Starter',
+		title: '🤖 Gatsby Dev Blog Starter',
 		description: 'Gatsby starter to get up and running with personal web development blog',
-		author: 'Vladimir Skok',
+		author: 'Your Name',
 		ghUser: 'iamskok',
 		ghRepo: 'gatsby-dev-blog-starter'
 	},
@@ -38,7 +38,11 @@ module.exports = {
 				plugins: [
 					`gatsby-remark-emoji-unicode`,
 					{
-						resolve: 'gatsby-remark-code-buttons'
+						resolve: 'gatsby-remark-code-buttons',
+						options: {
+							toasterText: 'Copied to clipboard',
+							toasterDuration: 5000
+						}
 					},
 					`gatsby-remark-code-titles`,
 					`gatsby-remark-autolink-headers`,
