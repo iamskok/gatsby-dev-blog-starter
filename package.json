@@ -52,7 +52,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "cd plugins/gatsby-remark-code-buttons && yarn && cd / && gatsby build",
+    "build": "yarn prebuild && gatsby build",
+    "prebuild": "cd plugins/gatsby-remark-code-buttons && yarn",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
