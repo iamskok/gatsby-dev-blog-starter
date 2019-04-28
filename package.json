@@ -51,7 +51,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "npm run prebuild && gatsby build --prefix-paths && gh-pages -d public",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
@@ -59,7 +59,7 @@
     "commit": "git-cz",
     "release": "standard-version",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "prebuild": "cd plugins/gatsby-remark-code-buttons/ && yarn"
+    "prebuild": "cd plugins/gatsby-remark-code-buttons && yarn && cd ../.."
   },
   "devDependencies": {
     "commitizen": "^3.0.5",
