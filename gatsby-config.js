@@ -42,8 +42,7 @@ module.exports = {
 					{
 						resolve: 'gatsby-remark-code-buttons',
 						options: {
-							toasterText: 'Copied to clipboard',
-							toasterDuration: 5000
+							toasterText: 'Copied to clipboard ✅'
 						}
 					},
 					`gatsby-remark-code-titles`,
