@@ -78,6 +78,3 @@ src/_content
 *.sass.map
 *.scss.map
 .DS_Store
-
-# Firebase
-.firebaseConfig
