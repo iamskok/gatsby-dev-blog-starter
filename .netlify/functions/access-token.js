@@ -2,7 +2,7 @@ const url = require(`url`)
 const axios = require(`axios`)
 const vault = require(`./vault`)
 const authRedirect = require(`./auth-redirect`)
-const host = process.env.GATSBY_HOSTNAME
+const host = `https://gatsby-dev-blog-starter.netlify.com`;
 const gh = {
   clientId: process.env.GATSBY_GITHUB_CLIENT_ID,
   redirectUri: `${host}/.netlify/functions/access-token`,
