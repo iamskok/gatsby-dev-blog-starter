@@ -1,8 +1,0 @@
-const host = process.env.NODE_ENV === `production` ? `https://gatsby-dev-blog-starter.netlify.com/` : `http://localhost:8888/`
-
-console.log(`process.env.NODE_ENV`, process.env.NODE_ENV);
-
-module.exports = {
-	clientId: process.env.GATSBY_GITHUB_CLIENT_ID,
-	redirectUri: `${host}/.netlify/functions/access-token`
-}
