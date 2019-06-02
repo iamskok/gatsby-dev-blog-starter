@@ -1,3 +1,3 @@
-import React from 'react';
+import React from 'react'
 
-export default props => <p>{props.text}</p>;
+export default props => <p>{props.text}</p>
