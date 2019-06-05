@@ -1,7 +1,8 @@
 const crypto = require(`crypto`)
 const vault = require(`./vault`)
 const rand = () => (Math.random() * 10 ** 17).toString(16)
-const host = process.env.NODE_ENV === `production` ? process.env.GATSBY_HOSTNAME : `http://localhost:8888`
+// const host = process.env.NODE_ENV === `production` ? process.env.GATSBY_HOSTNAME : `http://localhost:8888`
+const host = 'https://gatsby-dev-blog-starter.netlify.com'
 const gh = {
   clientId: process.env.GATSBY_GITHUB_CLIENT_ID,
   redirectUri: `${host}/.netlify/functions/access-token`

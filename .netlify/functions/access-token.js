@@ -5,7 +5,6 @@ const authRedirect = require(`./auth-redirect`)
 const host = `https://gatsby-dev-blog-starter.netlify.com`;
 const gh = {
   clientId: process.env.GATSBY_GITHUB_CLIENT_ID,
-  redirectUri: `${host}/.netlify/functions/access-token`,
   clientSecret: process.env.GATSBY_GITHUB_CLIENT_SECRET
 }
 
