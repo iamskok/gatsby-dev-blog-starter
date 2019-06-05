@@ -9,6 +9,7 @@ const gh = {
 }
 
 exports.handler = (event, context, callback) => {
+  vault.setWord();
   const hmac = crypto.createHmac(`sha256`, rand());
   const state = hmac.update(rand()).digest(`hex`);
 

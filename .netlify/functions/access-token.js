@@ -22,11 +22,11 @@ exports.handler = (event, context, callback) => {
     }
   }
 
-  if (!isValid && false) {
+  if (!isValid) {
     return callback(null, {
       statusCode: 403,
       // body: `Forbidden`
-      body: `states: ${JSON.stringify(states)}\nevent.queryStringParameters.state: ${event.queryStringParameters.state}\n`
+      body: `states: ${JSON.stringify(states)}\nevent.queryStringParameters.state: ${event.queryStringParameters.state}\nvault.getWord: ${vault.getWord()}`
     });
   }
 

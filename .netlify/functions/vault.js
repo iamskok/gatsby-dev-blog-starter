@@ -1,8 +1,16 @@
 const PURGE_TIMEOUT = 60 * 1000
 
+let word = `unknown`
+
 const Vault = {
     data: {
       states: []
+    },
+    setWord() {
+      word = 'my good word'
+    },
+    getWord() {
+      return word
     },
     add(section, value) {
       this.data[section].push(value)
