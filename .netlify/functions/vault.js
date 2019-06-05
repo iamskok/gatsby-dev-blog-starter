@@ -24,10 +24,10 @@ const Vault = {
     }
 }
 
-let timer = setInterval(() => {
-    Vault.purge()
-}, 2500)
+// let timer = setInterval(() => {
+//     Vault.purge()
+// }, 2500)
 
-timer.unref()
+// timer.unref()
 
 module.exports = Vault
