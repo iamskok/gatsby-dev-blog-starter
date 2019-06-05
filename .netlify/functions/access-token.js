@@ -22,7 +22,7 @@ exports.handler = (event, context, callback) => {
     }
   }
 
-  if (!isValid) {
+  if (!isValid && false) {
     return callback(null, {
       statusCode: 403,
       // body: `Forbidden`
