@@ -1,41 +1,36 @@
-const PURGE_TIMEOUT = 60 * 1000
+const password = process.env.GATSBY_FUNCTION_PASSWORD
 
-let word = `unknown`
-
-const Vault = {
-    data: {
-      states: []
-    },
-    setWord() {
-      word = 'my good word'
-    },
-    getWord() {
-      return word
-    },
-    add(section, value) {
-      this.data[section].push(value)
-    },
-    get(section) {
-      return this.data[section]
-    },
-    purge() {
-      const sections = Object.keys(this.data)
-      sections.forEach(section => {
-        let index = -1
-        for (let i = 0; i < section.length; i++) {
-          if (Date.now() - section[i].created > PURGE_TIMEOUT) {
-            index = i
-          }
-        }
-        this.data[section] = this.data[section].slice(index + 1)
-      })
-    }
+exports.handler = (event, context, callback) => {
+	if (event.httpMethod === 'POST') {
+		const body = JSON.parse(event.body)
+		if (body.password !== password) {
+			return callback(null, {
+				statusCode: 403,
+				body: 'Access denied'
+			})
+		}
+		const state = body.state
+		global.state = state
+		
+		callback(null, {
+			statusCode: 200,
+			body: global.state || ''
+		})
+	} else if (event.httpMethod === 'GET') {
+		if (event.queryStringParameters.password !== password) {
+			return callback(null, {
+				statusCode: 403,
+				body: 'Access denied'
+			})
+		}
+		callback(null, {
+			statusCode: 200,
+			body: global.state || ''
+		})
+	} else {
+		callback(null, {
+			statusCode: 405,
+      body: `Method is not allowed`
+		})
+	}
 }
-
-// let timer = setInterval(() => {
-//     Vault.purge()
-// }, 2500)
-
-// timer.unref()
-
-module.exports = Vault
