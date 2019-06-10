@@ -10,7 +10,7 @@ const redirectUri = `${host}/.netlify/functions/access-token`
 exports.handler = (event, context, callback) => {
   const hmac = crypto.createHmac(`sha256`, rand())
   const state = hmac.update(rand()).digest(`hex`)
-
+  console.log('[NODE_ENV]', process.env.NODE_ENV)
   axios.post(`${host}/.netlify/functions/vault`, {
     state,
     password
