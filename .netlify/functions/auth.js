@@ -1,26 +1,44 @@
 const crypto = require(`crypto`)
 const axios = require(`axios`)
-const vault = require(`./vault`)
 const rand = () => (Math.random() * 10 ** 17).toString(16)
-const host = process.env.GATSBY_HOST_URL
-const clientId = process.env.GATSBY_GITHUB_CLIENT_ID
-const password = process.env.GATSBY_FUNCTION_PASSWORD
-const redirectUri = `${host}/.netlify/functions/access-token`
+
+let host = ``
+let clientId = ``
+let password = ``
+
+if (process.env.NODE_ENV === 'production') {
+  host = process.env.GATSBY_HOST_URL
+  clientId = process.env.GATSBY_GITHUB_CLIENT_ID
+  password = process.env.GATSBY_FUNCTION_PASSWORD
+} else if (process.env.NODE_ENV === 'development') {
+  host = process.env.GATSBY_DEV_HOST_URL
+  clientId = process.env.GATSBY_DEV_GITHUB_CLIENT_ID
+  password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
+} else {
+  console.error('NODE_ENV is invalid', process.env.NODE_ENV)
+}
 
 exports.handler = (event, context, callback) => {
   const hmac = crypto.createHmac(`sha256`, rand())
   const state = hmac.update(rand()).digest(`hex`)
 
+  let OAuthURL = `https://github.com/login/oauth/authorize`
+
+  OAuthURL += `?client_id=${clientId}`
+  OAuthURL += `&redirect_uri=${host}/.netlify/functions/access-token`
+  OAuthURL += `&state=${state}`
+  OAuthURL += `&scope=repo,user`
+
+  console.log('\nOAuthURL:', OAuthURL)
+
   axios.post(`${host}/.netlify/functions/vault`, {
     state,
     password
   }).then(res => {
-    const githubIdentity = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&state=${state}&scope=repo,user`
-
     callback(null, {
       statusCode: 200,
       pathParameters: state,
-      body: githubIdentity
+      body: OAuthURL
     })
   }).catch(error => {
     console.error(error)
