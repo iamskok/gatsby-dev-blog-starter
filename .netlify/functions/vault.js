@@ -3,15 +3,16 @@ const password = process.env.GATSBY_FUNCTION_PASSWORD
 exports.handler = (event, context, callback) => {
 	if (event.httpMethod === 'POST') {
 		const body = JSON.parse(event.body)
+
 		if (body.password !== password) {
 			return callback(null, {
 				statusCode: 403,
 				body: 'Access denied'
 			})
 		}
-		const state = body.state
-		global.state = state
-		
+
+		global.state = body.state
+
 		callback(null, {
 			statusCode: 200,
 			body: global.state || ''
@@ -23,6 +24,7 @@ exports.handler = (event, context, callback) => {
 				body: 'Access denied'
 			})
 		}
+
 		callback(null, {
 			statusCode: 200,
 			body: global.state || ''
