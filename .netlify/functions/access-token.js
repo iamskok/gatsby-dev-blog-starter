@@ -6,18 +6,18 @@ let clientId = ``
 let clientSecret = ``
 let password = ``
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.CONTEXT === 'production') {
   host = process.env.GATSBY_HOST_URL
   clientId = process.env.GATSBY_GITHUB_CLIENT_ID
   clientSecret = process.env.GATSBY_GITHUB_CLIENT_SECRET
   password = process.env.GATSBY_FUNCTION_PASSWORD
-} else if (process.env.NODE_ENV === 'development') {
+} else if (process.env.CONTEXT === 'development') {
   host = process.env.GATSBY_DEV_HOST_URL
   clientId = process.env.GATSBY_DEV_GITHUB_CLIENT_ID
   clientSecret = process.env.GATSBY_DEV_GITHUB_CLIENT_SECRET
   password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
 } else {
-  console.error('access-token.js: process.env.NODE_ENV is not valid. \nPlease select from `production` or `development`', process.env.NODE_ENV)
+  console.error('access-token.js: process.env.CONTEXT is invalid. \nPlease select from `production` or `development`', process.env.CONTEXT)
 }
 
 exports.handler = (event, context, callback) => {

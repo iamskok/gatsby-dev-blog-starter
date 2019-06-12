@@ -1,11 +1,11 @@
 let password = ``
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.CONTEXT === 'production') {
   password = process.env.GATSBY_FUNCTION_PASSWORD
-} else if (process.env.NODE_ENV === 'development') {
+} else if (process.env.CONTEXT === 'development') {
   password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
 } else {
-  console.error('vault.js: process.env.NODE_ENV is not valid. \nPlease select from `production` or `development`', process.env.NODE_ENV)
+  console.error('vault.js: process.env.CONTEXT is invalid. \nPlease select from `production` or `development`', process.env.CONTEXT)
 }
 
 exports.handler = (event, context, callback) => {
