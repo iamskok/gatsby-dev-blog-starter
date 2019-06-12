@@ -1,9 +1,3 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
-})
-
-console.log(`GATSBY_CONFIG`, process.env.NODE_ENV)
-
 module.exports = {
 	pathPrefix: "/gatsby-dev-blog-starter",
 	siteMetadata: {
