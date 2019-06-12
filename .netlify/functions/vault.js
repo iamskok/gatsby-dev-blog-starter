@@ -1,4 +1,12 @@
-const password = process.env.GATSBY_FUNCTION_PASSWORD
+let password = ``
+
+if (process.env.NODE_ENV === 'production') {
+  password = process.env.GATSBY_FUNCTION_PASSWORD
+} else if (process.env.NODE_ENV === 'development') {
+  password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
+} else {
+  console.error('vault.js: process.env.NODE_ENV is not valid. \nPlease select from `production` or `development`', process.env.NODE_ENV)
+}
 
 exports.handler = (event, context, callback) => {
 	if (event.httpMethod === 'POST') {

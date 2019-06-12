@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
   clientId = process.env.GATSBY_DEV_GITHUB_CLIENT_ID
   password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
 } else {
-  console.error('NODE_ENV is invalid', process.env.NODE_ENV)
+  console.error('auth.js: process.env.NODE_ENV is not valid. \nPlease select from `production` or `development`', process.env.NODE_ENV)
 }
 
 exports.handler = (event, context, callback) => {
@@ -28,8 +28,6 @@ exports.handler = (event, context, callback) => {
   OAuthURL += `&redirect_uri=${host}/.netlify/functions/access-token`
   OAuthURL += `&state=${state}`
   OAuthURL += `&scope=repo,user`
-
-  console.log('\nOAuthURL:', OAuthURL)
 
   axios.post(`${host}/.netlify/functions/vault`, {
     state,

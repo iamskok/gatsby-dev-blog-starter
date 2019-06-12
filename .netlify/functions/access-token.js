@@ -1,9 +1,24 @@
 const axios = require(`axios`)
 const authRedirect = require(`./auth-redirect`)
-const host = process.env.GATSBY_HOST_URL
-const clientId = process.env.GATSBY_GITHUB_CLIENT_ID
-const clientSecret = process.env.GATSBY_GITHUB_CLIENT_SECRET
-const password = process.env.GATSBY_FUNCTION_PASSWORD
+
+let host = ``
+let clientId = ``
+let clientSecret = ``
+let password = ``
+
+if (process.env.NODE_ENV === 'production') {
+  host = process.env.GATSBY_HOST_URL
+  clientId = process.env.GATSBY_GITHUB_CLIENT_ID
+  clientSecret = process.env.GATSBY_GITHUB_CLIENT_SECRET
+  password = process.env.GATSBY_FUNCTION_PASSWORD
+} else if (process.env.NODE_ENV === 'development') {
+  host = process.env.GATSBY_DEV_HOST_URL
+  clientId = process.env.GATSBY_DEV_GITHUB_CLIENT_ID
+  clientSecret = process.env.GATSBY_DEV_GITHUB_CLIENT_SECRET
+  password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
+} else {
+  console.error('access-token.js: process.env.NODE_ENV is not valid. \nPlease select from `production` or `development`', process.env.NODE_ENV)
+}
 
 exports.handler = (event, context, callback) => {
   axios.get(`${host}/.netlify/functions/vault?password=${password}`)
