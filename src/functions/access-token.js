@@ -1,5 +1,5 @@
 const axios = require(`axios`)
-const authRedirect = require(`../auth-redirect`)
+const authRedirect = require(`./auth-redirect`)
 
 let host = ``
 let clientId = ``
