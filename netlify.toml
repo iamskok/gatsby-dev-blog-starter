@@ -3,7 +3,7 @@
 [build]
   base = "/"
   publish = "public"
-  command = "yarn build"
+  command = "CONTEXT=production yarn build"
   functions = ".netlify/functions"
 [build.environment]
   NODE_VERSION = "11.5.0"
