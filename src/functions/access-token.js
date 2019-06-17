@@ -1,5 +1,5 @@
-const axios = require(`axios`)
-const authRedirect = require(`../auth-redirect`)
+import axios from 'axios'
+import authRedirect '../auth-redirect'
 
 let host = ``
 let clientId = ``

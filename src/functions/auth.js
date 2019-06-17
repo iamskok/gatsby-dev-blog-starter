@@ -1,5 +1,5 @@
-const crypto = require(`crypto`)
-const axios = require(`axios`)
+import crypto from 'crypto'
+import axios from 'axios'
 const rand = () => (Math.random() * 10 ** 17).toString(16)
 
 let host = ``
