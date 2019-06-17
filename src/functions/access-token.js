@@ -1,5 +1,5 @@
 const axios = require(`axios`)
-const authRedirect = require(`./auth-redirect`)
+const authRedirect = require(`../auth-redirect`)
 
 let host = ``
 let clientId = ``
@@ -21,7 +21,7 @@ if (process.env.CONTEXT === 'production') {
 }
 
 exports.handler = (event, context, callback) => {
-  axios.get(`${host}/.netlify/functions/vault?password=${password}`)
+  axios.get(`${host}/functions/vault?password=${password}`)
     .then(res => {
       const state = res.data
       let isValid = false

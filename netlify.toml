@@ -4,7 +4,7 @@
   base = "/"
   publish = "public"
   command = "CONTEXT=production yarn build"
-  functions = ".netlify/functions"
+  functions = "functions"
 [build.environment]
   NODE_VERSION = "11.5.0"
   YARN_VERSION = "1.3.2"

@@ -54,7 +54,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build:functions": "netlify-lambda build src/functions",
+    "develop": "npm run build:functions && CONTEXT=development netlify dev",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "commit": "git-cz",
@@ -64,6 +65,7 @@
   "devDependencies": {
     "commitizen": "^3.0.5",
     "cz-customizable": "^5.3.0",
+    "netlify-lambda": "^1.4.13",
     "prettier": "^1.16.4",
     "standard-version": "^4.4.0"
   },
