@@ -3,7 +3,7 @@
 [build]
   base = "/"
   publish = "public"
-  command = "CONTEXT=production yarn build"
+  command = "yarn build"
   functions = "functions"
 [build.environment]
   NODE_VERSION = "11.5.0"
