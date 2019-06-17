@@ -1,5 +1,5 @@
 import axios from 'axios'
-import authRedirect '../auth-redirect'
+import authRedirect from '../auth-redirect'
 
 let host = ``
 let clientId = ``
