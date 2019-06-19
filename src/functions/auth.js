@@ -1,12 +1,13 @@
-const crypto = require(`crypto`)
-const axios = require(`axios`)
+import crypto from 'crypto'
+import axios from 'axios'
+
 const rand = () => (Math.random() * 10 ** 17).toString(16)
 
 let host = ``
 let clientId = ``
 let password = ``
 
-console.log('00223904324234234', process.env.CONTEXT)
+console.log('TEST', process.env.CONTEXT)
 
 if (process.env.CONTEXT === 'production') {
   host = process.env.GATSBY_HOST_URL
