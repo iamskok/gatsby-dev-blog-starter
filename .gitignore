@@ -78,3 +78,6 @@ src/_content
 *.sass.map
 *.scss.map
 .DS_Store
+
+# Directory for netlify lambda functions build
+functions/
