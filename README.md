@@ -25,8 +25,11 @@ Kick off your project with this development blog boilerplate. This starter ships
 ## Roadmap
 
 * Configure [Google Analytics](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/).
-* Add share buttons in post template.
-* Add form submition on contacts page.
-* UI redesign and dropping [Google Material UI](https://github.com/mui-org/material-ui).
+* AWS Lambda contact form.
+* UI redesign with accessibility in mind.
+* Light/Dark theme.
+* Like buttons.
+* Share buttons.
+* User Auth (like buttons, theme selection, contact form, history)
 
 [PR's are welcome](https://github.com/iamskok/gatsby-dev-blog-starter/pulls) 🤗
