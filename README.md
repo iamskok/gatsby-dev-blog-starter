@@ -26,10 +26,14 @@ Kick off your project with this development blog boilerplate. This starter ships
 
 * Configure [Google Analytics](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/).
 * AWS Lambda contact form.
-* UI redesign with accessibility in mind.
+* UI redesign.
 * Light/Dark theme.
 * Like buttons.
 * Share buttons.
-* User Auth (like buttons, theme selection, contact form, history)
+* User Auth (like buttons, theme selection, contact form, history).
+* i18n.
+* a11y.
+* [Algolia search](https://github.com/algolia/gatsby-plugin-algolia)
+* [Guess.js](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-guess-js)
 
 [PR's are welcome](https://github.com/iamskok/gatsby-dev-blog-starter/pulls) 🤗
