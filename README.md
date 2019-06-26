@@ -35,8 +35,10 @@ Kick off your project with this development blog boilerplate. This starter ships
 * a11y.
 * [Algolia search](https://github.com/algolia/gatsby-plugin-algolia)
 * [Guess.js](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-guess-js)
-* Add GitHub pinned projects
-* Add latest tweets
-* Add about the author component 
+* GitHub pinned projects.
+* Latest tweets component.
+* About the author component.
+* [Storybook](https://github.com/storybookjs/storybook/).
+* CSS in JS.
 
 [PR's are welcome](https://github.com/iamskok/gatsby-dev-blog-starter/pulls) 🤗
