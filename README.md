@@ -24,7 +24,7 @@ Kick off your project with this development blog boilerplate. This starter ships
 
 ## Roadmap
 
-* Configure [Google Analytics](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/).
+* [Google Analytics](https://www.gatsbyjs.org/packages/gatsby-plugin-google-analytics/).
 * AWS Lambda contact form.
 * UI redesign.
 * Light/Dark theme.
@@ -37,7 +37,7 @@ Kick off your project with this development blog boilerplate. This starter ships
 * [Guess.js](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-guess-js)
 * GitHub pinned projects.
 * Latest tweets component.
-* About the author component.
+* Author component.
 * [Storybook](https://github.com/storybookjs/storybook/).
 * CSS in JS.
 
