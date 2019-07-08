@@ -40,5 +40,6 @@ Kick off your project with this development blog boilerplate. This starter ships
 * Author component.
 * [Storybook](https://github.com/storybookjs/storybook/).
 * CSS in JS.
+* Use `gatsby-theme` feature
 
 [PR's are welcome](https://github.com/iamskok/gatsby-dev-blog-starter/pulls) 🤗
