@@ -7,7 +7,9 @@ let host = ``
 let clientId = ``
 let password = ``
 
-console.log('TEST', process.env.CONTEXT)
+console.log('❌❌❌❌❌', process.env.GATSBY_DEV_HOST_URL);
+console.log('❌❌❌❌❌', process.env.GATSBY_DEV_GITHUB_CLIENT_ID);
+console.log('❌❌❌❌❌', process.env.GATSBY_DEV_FUNCTION_PASSWORD);
 
 if (process.env.CONTEXT === 'production') {
   host = process.env.GATSBY_HOST_URL
@@ -28,11 +30,11 @@ exports.handler = (event, context, callback) => {
   let OAuthURL = `https://github.com/login/oauth/authorize`
 
   OAuthURL += `?client_id=${clientId}`
-  OAuthURL += `&redirect_uri=${host}/.netlify/functions/access-token`
+  OAuthURL += `&redirect_uri=${host}/functions/access-ещлут`
   OAuthURL += `&state=${state}`
   OAuthURL += `&scope=repo,user`
 
-  axios.post(`${host}/.netlify/functions/vault`, {
+  axios.post(`${host}/functions/vault`, {
     state,
     password
   }).then(res => {
