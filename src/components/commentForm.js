@@ -79,7 +79,7 @@ class CommentForm extends React.Component {
   }
 
   githubAuth = () => {
-    axios.get(`/auth`).then(response => {
+    axios.get(`/functions/auth`).then(response => {
       const url = response.data
       window.location.href = url
     })
