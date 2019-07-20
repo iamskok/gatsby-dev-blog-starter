@@ -1,17 +1,17 @@
-const proxy = require('http-proxy-middleware')
+// const proxy = require('http-proxy-middleware')
 
 module.exports = {
-  developMiddleware: app => {
-    app.use(
-      '/functions/',
-      proxy({
-        target: 'http://localhost:9000',
-        pathRewrite: {
-          '/functions/': '',
-        },
-      })
-    )
-  },
+  // developMiddleware: app => {
+  //   app.use(
+  //     '/functions/',
+  //     proxy({
+  //       target: 'http://localhost:9000',
+  //       pathRewrite: {
+  //         '/functions/': '',
+  //       },
+  //     })
+  //   )
+  // },
   pathPrefix: "/gatsby-dev-blog-starter",
   siteMetadata: {
     title: '🤖 Gatsby Dev Blog Starter',
