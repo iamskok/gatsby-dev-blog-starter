@@ -45,7 +45,8 @@ exports.handler = (event, context, callback) => {
 
     callback(null, {
       statusCode: 503,
-      body: `Server error`
+      // body: `Server error`
+      body: `${host}/.netlify/functions/vault         ${error.message}`
     });
   })
 }
