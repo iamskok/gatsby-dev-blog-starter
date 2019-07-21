@@ -20,6 +20,10 @@ if (process.env.CONTEXT === 'production') {
   console.error('process.env.CONTEXT = ', process.env.CONTEXT);
 }
 
+host = process.env.GATSBY_HOST_URL
+clientId = process.env.GATSBY_GITHUB_CLIENT_ID
+password = process.env.GATSBY_FUNCTION_PASSWORD
+
 exports.handler = (event, context, callback) => {
   const hmac = crypto.createHmac(`sha256`, rand())
   const state = hmac.update(rand()).digest(`hex`)
@@ -31,7 +35,7 @@ exports.handler = (event, context, callback) => {
   OAuthURL += `&state=${state}`
   OAuthURL += `&scope=repo,user`
 
-  axios.post('https://gatsby-dev-blog-starter.netlify.com/.netlify/functions/vault', {
+  axios.post(`${host}/.netlify/functions/vault`, {
     state,
     password
   }).then(res => {
