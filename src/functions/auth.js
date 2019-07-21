@@ -44,7 +44,7 @@ exports.handler = (event, context, callback) => {
     console.error(error)
 
     callback(null, {
-      statusCode: 500,
+      statusCode: 503,
       body: `Server error`
     });
   })
