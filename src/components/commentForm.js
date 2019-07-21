@@ -79,7 +79,7 @@ class CommentForm extends React.Component {
   }
 
   githubAuth = () => {
-    axios.get(`/functions/auth`).then(response => {
+    axios.get(`/.netlify/functions/auth`).then(response => {
       const url = response.data
       window.location.href = url
     })
