@@ -11,16 +11,16 @@ if (process.env.CONTEXT === 'production') {
 
 exports.handler = (event, context, callback) => {
   if (event.httpMethod === 'POST') {
-    // const body = JSON.parse(event.body)
+    const body = JSON.parse(event.body)
 
-    // if (body.password !== password) {
-    //   return callback(null, {
-    //     statusCode: 403,
-    //     body: 'Access denied'
-    //   })
-    // }
+    if (body.password !== password) {
+      return callback(null, {
+        statusCode: 403,
+        body: 'Access denied'
+      })
+    }
 
-    // global.state = body.state
+    global.state = body.state
 
     callback(null, {
       statusCode: 200,
