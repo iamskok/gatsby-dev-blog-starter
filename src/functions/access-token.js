@@ -1,5 +1,49 @@
-const axios = require(`axios`)
-const authRedirect = require(`./auth-redirect`)
+const axios = require('axios')
+const authRedirect = (query) => `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      if (localStorage !== undefined) {
+        localStorage.setItem('github-token', '${query[`access_token`]}')
+      } else {
+        function setCookie(name, value, options = {}) {
+
+          options = {
+            path: '/',
+            // add other defaults here if necessary
+            ...options
+          };
+
+          if (options.expires && options.expires.toUTCString) {
+            options.expires = options.expires.toUTCString()
+          }
+
+          let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value)
+
+          for (let optionKey in options) {
+            updatedCookie += '; ' + optionKey
+            let optionValue = options[optionKey]
+            if (optionValue !== true) {
+              updatedCookie += '=' + optionValue
+            }
+          }
+
+          document.cookie = updatedCoo
+        }
+        // Set a cookie for 1 month
+        setCookie('github-token', '${query[`access_token`]}', {
+          'max-age': 2678400
+        });
+      }
+      location.href = '/blog/github-comments';
+    </script>
+  </body>
+  </html>`
 
 let host = ``
 let clientId = ``
@@ -17,7 +61,8 @@ if (process.env.CONTEXT === 'production') {
   clientSecret = process.env.GATSBY_DEV_GITHUB_CLIENT_SECRET
   password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
 } else {
-  console.error('access-token.js: process.env.CONTEXT is invalid. \nPlease select from `production` or `development`', process.env.CONTEXT)
+  console.error('process.env.CONTEXT is invalid. \nPlease select from `production` or `development`\n')
+  console.error('process.env.CONTEXT = ', process.env.CONTEXT);
 }
 
 exports.handler = (event, context, callback) => {
@@ -53,6 +98,7 @@ exports.handler = (event, context, callback) => {
         })
       }).catch(error => {
         console.error(error)
+
         callback(null, {
           statusCode: 500,
           body: `Server error`

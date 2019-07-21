@@ -5,6 +5,10 @@ import markdownWrapper from './markdownWrapper'
 import '../styles/comment-form.scss'
 import '../styles/spinner.scss'
 
+const ghAPI = `https://api.github.com`
+const ghAPIUser = `${ghAPI}/user`
+const ghAPIRepos = `${ghAPI}/repos`
+
 const Preview = markdownWrapper(props => {
   return (
     <div
@@ -49,7 +53,7 @@ class CommentForm extends React.Component {
 
     if (token) {
       axios
-        .get(`https://api.github.com/user`, {
+        .get(ghAPIUser, {
           headers: {
             Authorization: `token ${token}`,
           },
@@ -113,39 +117,37 @@ class CommentForm extends React.Component {
       preview: false,
     })
     document.querySelector(`.comment-form`).value = ``
-    axios
-      .post(
-        `https://api.github.com/repos/${props.ghUser}/${props.ghRepo}/issues/${
-          props.issueId
-        }/comments`,
-        {
-          body: text,
-        },
-        {
-          headers: {
-            Authorization: `token ${this.state.token}`,
-          },
+    axios.post(
+      `${ghAPIRepos}/${props.ghUser}/${props.ghRepo}/issues/${props.issueId}/comments`,
+      { body: text },
+      {
+        headers: {
+          Authorization: `token ${this.state.token}`,
         }
-      )
-      .then(response => {
-        this.props.addComment(response.data)
-        this.handleBlur()
-      })
-      .catch(error => {
-        if (error.response.status === 401) {
-          if (localStorage !== undefined) {
-            localStorage.removeItem(`github-token`)
-            localStorage.removeItem(`github-sign-in`)
-            localStorage.removeItem(`github-avatar`)
-            localStorage.removeItem(`github-username`)
-          } else {
-            const { cookies } = this.props
-            cookies.set(`github-token`, true, {'max-age': 0 })
-          }
-          this.setState({ token: `` })
+      }
+    ).then(response => {
+      this.props.addComment(response.data)
+      this.handleBlur()
+    })
+    .catch(error => {
+      if (error.response.status === 401) {
+        if (localStorage !== undefined) {
+          localStorage.removeItem(`github-token`)
+          localStorage.removeItem(`github-sign-in`)
+          localStorage.removeItem(`github-avatar`)
+          localStorage.removeItem(`github-username`)
+        } else {
+          const { cookies } = this.props
+          cookies.set(
+            `github-token`,
+            true,
+            { 'max-age': 0 }
+          )
         }
-        console.error(error)
-      })
+        this.setState({ token: `` })
+      }
+      console.error(error)
+    })
   }
 
   render() {

@@ -1,12 +1,11 @@
-const crypto = require(`crypto`)
-const axios = require(`axios`)
+const crypto = require('crypto')
+const axios = require('axios')
+
 const rand = () => (Math.random() * 10 ** 17).toString(16)
 
 let host = ``
 let clientId = ``
 let password = ``
-
-console.log('00223904324234234', process.env.CONTEXT)
 
 if (process.env.CONTEXT === 'production') {
   host = process.env.GATSBY_HOST_URL
@@ -17,7 +16,8 @@ if (process.env.CONTEXT === 'production') {
   clientId = process.env.GATSBY_DEV_GITHUB_CLIENT_ID
   password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
 } else {
-  console.error('auth.js: process.env.CONTEXT is invalid. \nPlease select from `production` or `development`', process.env.CONTEXT)
+  console.error('process.env.CONTEXT is invalid. \nPlease select from `production` or `development`\n')
+  console.error('process.env.CONTEXT = ', process.env.CONTEXT);
 }
 
 exports.handler = (event, context, callback) => {
