@@ -73,16 +73,17 @@ exports.handler = (event, context, callback) => {
   axios.get(`${host}/.netlify/functions/vault?password=${password}`)
     .then(res => {
       const state = res.data
-      let isValid = false
-      if (state === event.queryStringParameters.state) {
-        isValid = true
-      }
-      if (!isValid) {
-        return callback(null, {
-          statusCode: 403,
-          body: `Forbidden`
-        })
-      }
+      // let isValid = false
+      // if (state === event.queryStringParameters.state) {
+      //   isValid = true
+      // }
+      // if (!isValid) {
+      //   return callback(null, {
+      //     statusCode: 403,
+      //     body: `Forbidden`
+      //   })
+      // }
+      let isValid = true
       axios.post(`https://github.com/login/oauth/access_token`, {
         state: event.queryStringParameters.state,
         client_id: clientId,
