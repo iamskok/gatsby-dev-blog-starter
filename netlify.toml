@@ -4,4 +4,4 @@
   base = "/"
   publish = "public"
   command = "yarn build"
-  functions = "./.netlify/functions"
+  functions = ".netlify/functions"
