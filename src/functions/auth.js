@@ -31,7 +31,7 @@ exports.handler = (event, context, callback) => {
   OAuthURL += `&state=${state}`
   OAuthURL += `&scope=repo,user`
 
-  axios.post(`${host}/.netlify/functions/vault`, {
+  axios.post('https://gatsby-dev-blog-starter.netlify.com/.netlify/functions/vault', {
     state,
     password
   }).then(res => {
