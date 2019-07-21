@@ -1,5 +1,5 @@
-import axios from 'axios'
-import authRedirect from '../auth-redirect'
+const axios = require('axios')
+const authRedirect = require('./templates/auth-redirect')
 
 let host = ``
 let clientId = ``
@@ -17,11 +17,12 @@ if (process.env.CONTEXT === 'production') {
   clientSecret = process.env.GATSBY_DEV_GITHUB_CLIENT_SECRET
   password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
 } else {
-  console.error('access-token.js: process.env.CONTEXT is invalid. \nPlease select from `production` or `development`', process.env.CONTEXT)
+  console.error('process.env.CONTEXT is invalid. \nPlease select from `production` or `development`\n')
+  console.error('process.env.CONTEXT = ', process.env.CONTEXT);
 }
 
 exports.handler = (event, context, callback) => {
-  axios.get(`${host}/functions/vault?password=${password}`)
+  axios.get(`${host}/.netlify/functions/vault?password=${password}`)
     .then(res => {
       const state = res.data
       let isValid = false

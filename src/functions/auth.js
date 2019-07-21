@@ -1,5 +1,5 @@
-import crypto from 'crypto'
-import axios from 'axios'
+const crypto = require('crypto')
+const axios = require('axios')
 
 const rand = () => (Math.random() * 10 ** 17).toString(16)
 
@@ -10,6 +10,7 @@ let password = ``
 console.log('❌❌❌❌❌', process.env.GATSBY_DEV_HOST_URL);
 console.log('❌❌❌❌❌', process.env.GATSBY_DEV_GITHUB_CLIENT_ID);
 console.log('❌❌❌❌❌', process.env.GATSBY_DEV_FUNCTION_PASSWORD);
+console.log(process.env.CONTEXT)
 
 if (process.env.CONTEXT === 'production') {
   host = process.env.GATSBY_HOST_URL
@@ -20,7 +21,8 @@ if (process.env.CONTEXT === 'production') {
   clientId = process.env.GATSBY_DEV_GITHUB_CLIENT_ID
   password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
 } else {
-  console.error('auth.js: process.env.CONTEXT is invalid. \nPlease select from `production` or `development`', process.env.CONTEXT)
+  console.error('process.env.CONTEXT is invalid. \nPlease select from `production` or `development`\n')
+  console.error('process.env.CONTEXT = ', process.env.CONTEXT);
 }
 
 exports.handler = (event, context, callback) => {
@@ -30,11 +32,11 @@ exports.handler = (event, context, callback) => {
   let OAuthURL = `https://github.com/login/oauth/authorize`
 
   OAuthURL += `?client_id=${clientId}`
-  OAuthURL += `&redirect_uri=${host}/functions/access-ещлут`
+  OAuthURL += `&redirect_uri=${host}/.netlify/functions/access-token`
   OAuthURL += `&state=${state}`
   OAuthURL += `&scope=repo,user`
 
-  axios.post(`${host}/functions/vault`, {
+  axios.post(`${host}/.netlify/functions/vault`, {
     state,
     password
   }).then(res => {

@@ -5,7 +5,8 @@ if (process.env.CONTEXT === 'production') {
 } else if (process.env.CONTEXT === 'development') {
   password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
 } else {
-  console.error('vault.js: process.env.CONTEXT is invalid. \nPlease select from `production` or `development`', process.env.CONTEXT)
+  console.error('process.env.CONTEXT is invalid. \nPlease select from `production` or `development`\n')
+    console.error('process.env.CONTEXT = ', process.env.CONTEXT);
 }
 
 exports.handler = (event, context, callback) => {
