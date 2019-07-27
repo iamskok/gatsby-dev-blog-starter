@@ -7,7 +7,7 @@ let host = ``
 let clientId = ``
 let password = ``
 
-console.log('CONTEXT', process.env.CONTEXT)
+console.log('auth.js CONTEXT', process.env.CONTEXT)
 
 if (process.env.CONTEXT === 'production') {
   host = process.env.GATSBY_HOST_URL

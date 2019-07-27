@@ -50,6 +50,8 @@ let clientId = ``
 let clientSecret = ``
 let password = ``
 
+console.log('access-token.js CONTEXT', process.env.CONTEXT)
+
 if (process.env.CONTEXT === 'production') {
   host = process.env.GATSBY_HOST_URL
   clientId = process.env.GATSBY_GITHUB_CLIENT_ID
@@ -68,6 +70,10 @@ if (process.env.CONTEXT === 'production') {
 host = 'https://gatsby-dev-blog-starter.netlify.com'
 clientId = '48c2d50f608bd71d4aac'
 password = 'MX#MC&fhati1m0jAEtKCV%QeXcNTX%3khlCsjf^hiuPZVaP2EMCqmdYWC6f^SSnJx3N8llqbR1$UBkh1^YG7MrQb41aR$%CA*JTm'
+
+console.log('vault.js host', host)
+console.log('vault.js clientId', clientId)
+console.log('vault.js password', password)
 
 exports.handler = (event, context, callback) => {
   axios.get(`${host}/.netlify/functions/vault?password=${password}`)
