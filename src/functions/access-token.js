@@ -52,7 +52,7 @@ let password = ``
 
 console.log('access-token.js CONTEXT', process.env.CONTEXT)
 
-if (process.env.CONTEXT === 'production') {
+if (process.env.CONTEXT === 'production' || true) {
   host = process.env.GATSBY_HOST_URL
   clientId = process.env.GATSBY_GITHUB_CLIENT_ID
   clientSecret = process.env.GATSBY_GITHUB_CLIENT_SECRET

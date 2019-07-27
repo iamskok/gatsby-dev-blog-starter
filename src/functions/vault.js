@@ -2,7 +2,7 @@ let password = ``
 
 console.log('vault.js CONTEXT', process.env.CONTEXT)
 
-if (process.env.CONTEXT === 'production') {
+if (process.env.CONTEXT === 'production' || true) {
   password = process.env.GATSBY_FUNCTION_PASSWORD
 } else if (process.env.CONTEXT === 'development') {
   password = process.env.GATSBY_DEV_FUNCTION_PASSWORD

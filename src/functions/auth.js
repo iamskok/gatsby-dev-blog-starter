@@ -9,7 +9,7 @@ let password = ``
 
 console.log('auth.js CONTEXT', process.env.CONTEXT)
 
-if (process.env.CONTEXT === 'production') {
+if (process.env.CONTEXT === 'production' || true) {
   host = process.env.GATSBY_HOST_URL
   clientId = process.env.GATSBY_GITHUB_CLIENT_ID
   password = process.env.GATSBY_FUNCTION_PASSWORD
