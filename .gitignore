@@ -70,7 +70,6 @@ yarn-error.log
 
 # Misc
 TODO.md
-src/_content
 
 # Sass
 .sass-cache/
@@ -78,6 +77,3 @@ src/_content
 *.sass.map
 *.scss.map
 .DS_Store
-
-# Directory for netlify lambda functions build
-functions/
