@@ -116,11 +116,18 @@ exports.handler = (event, context, callback) => {
         })
       })
     }).catch(error => {
+    	let err;
+    	try {
+    		err = JSON.stringify(error)
+    	} catch(e) {
+    		err = `xxxxxx ${e.message}`
+    	}
+
       console.error(error)
 
       callback(null, {
         statusCode: 500,
-        body: `Server error 2 - ${error.message}`
+        body: `Server error 2 - ${error.message} ${err}`
       })
   })
 }
