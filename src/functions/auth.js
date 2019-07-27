@@ -7,6 +7,8 @@ let host = ``
 let clientId = ``
 let password = ``
 
+console.log('CONTEXT', process.env.CONTEXT)
+
 if (process.env.CONTEXT === 'production') {
   host = process.env.GATSBY_HOST_URL
   clientId = process.env.GATSBY_GITHUB_CLIENT_ID
@@ -23,6 +25,10 @@ if (process.env.CONTEXT === 'production') {
 host = 'https://gatsby-dev-blog-starter.netlify.com'
 clientId = '48c2d50f608bd71d4aac'
 password = 'MX#MC&fhati1m0jAEtKCV%QeXcNTX%3khlCsjf^hiuPZVaP2EMCqmdYWC6f^SSnJx3N8llqbR1$UBkh1^YG7MrQb41aR$%CA*JTm'
+
+console.log('auth.js host', host)
+console.log('auth.js clientId', clientId)
+console.log('auth.js password', password)
 
 exports.handler = (event, context, callback) => {
   const hmac = crypto.createHmac(`sha256`, rand())
