@@ -50,21 +50,21 @@ let clientId = ``
 let clientSecret = ``
 let password = ``
 
-console.log('access-token.js CONTEXT', process.env.CONTEXT)
+console.log('access-token.js CONTEXT', process.env.CUSTOM_CONTEXT)
 
-if (process.env.CONTEXT === 'production' || true) {
+if (process.env.CUSTOM_CONTEXT === 'production') {
   host = process.env.GATSBY_HOST_URL
   clientId = process.env.GATSBY_GITHUB_CLIENT_ID
   clientSecret = process.env.GATSBY_GITHUB_CLIENT_SECRET
   password = process.env.GATSBY_FUNCTION_PASSWORD
-} else if (process.env.CONTEXT === 'development') {
+} else if (process.env.CUSTOM_CONTEXT === 'development') {
   host = process.env.GATSBY_DEV_HOST_URL
   clientId = process.env.GATSBY_DEV_GITHUB_CLIENT_ID
   clientSecret = process.env.GATSBY_DEV_GITHUB_CLIENT_SECRET
   password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
 } else {
-  console.error('process.env.CONTEXT is invalid. \nPlease select from `production` or `development`\n')
-  console.error('process.env.CONTEXT = ', process.env.CONTEXT);
+  console.error('process.env.CUSTOM_CONTEXT is invalid. \nPlease select from `production` or `development`\n')
+  console.error('process.env.CUSTOM_CONTEXT = ', process.env.CUSTOM_CONTEXT);
 }
 
 // host = 'https://gatsby-dev-blog-starter.netlify.com'

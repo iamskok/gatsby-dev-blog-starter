@@ -1,4 +1,4 @@
-const context = process.env.CONTEXT;
+const context = process.env.CUSTOM_CONTEXT;
 const host = process.env.GATSBY_HOST_URL
 const clientId = process.env.GATSBY_GITHUB_CLIENT_ID
 const clientSecret = process.env.GATSBY_GITHUB_CLIENT_SECRET
