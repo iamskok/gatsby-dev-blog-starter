@@ -112,7 +112,7 @@ exports.handler = (event, context, callback) => {
 
         callback(null, {
           statusCode: 500,
-          body: `Server error 1 - ${error.message} - ${JSON.stringify(error)}`
+          body: `Server error 1 - ${error.message}`
         })
       })
     }).catch(error => {
@@ -120,7 +120,7 @@ exports.handler = (event, context, callback) => {
 
       callback(null, {
         statusCode: 500,
-        body: `Server error 2 - ${error.message} - ${JSON.stringify(error)}`
+        body: `Server error 2 - ${error.message}`
       })
   })
 }
