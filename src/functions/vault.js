@@ -37,7 +37,7 @@ exports.handler = (event, context, callback) => {
       body: global.state || ''
     })
   } else if (event.httpMethod === 'GET') {
-    if (event.queryStringParameters.password !== password || true) {
+    if (event.queryStringParameters.password !== password) {
       return callback(null, {
         statusCode: 403,
         body: 'Access denied 2'
