@@ -7,3 +7,4 @@
 [context.production]
   [context.production.environment]
     GATSBY_CUSTOM_CONTEXT = "production"
+    GATSBY_CUSTOM_CONTEXT1 = "context1"
