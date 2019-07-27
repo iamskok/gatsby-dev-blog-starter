@@ -22,13 +22,15 @@ if (process.env.CONTEXT === 'production') {
   console.error('process.env.CONTEXT = ', process.env.CONTEXT);
 }
 
-host = 'https://gatsby-dev-blog-starter.netlify.com'
-clientId = '48c2d50f608bd71d4aac'
-password = 'MX#MC&fhati1m0jAEtKCV%QeXcNTX%3khlCsjf^hiuPZVaP2EMCqmdYWC6f^SSnJx3N8llqbR1$UBkh1^YG7MrQb41aR$%CA*JTm'
+// host = 'https://gatsby-dev-blog-starter.netlify.com'
+// clientId = '48c2d50f608bd71d4aac'
+// password = 'MX#MC&fhati1m0jAEtKCV%QeXcNTX%3khlCsjf^hiuPZVaP2EMCqmdYWC6f^SSnJx3N8llqbR1$UBkh1^YG7MrQb41aR$%CA*JTm'
 
 console.log('auth.js host', host)
 console.log('auth.js clientId', clientId)
 console.log('auth.js password', password)
+
+console.log('auth.js host', host)
 
 exports.handler = (event, context, callback) => {
   const hmac = crypto.createHmac(`sha256`, rand())
