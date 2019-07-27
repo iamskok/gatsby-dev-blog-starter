@@ -1,14 +1,14 @@
 let password = ``
 
-console.log('vault.js CONTEXT', process.env.CUSTOM_CONTEXT)
+console.log('vault.js CONTEXT', process.env.GATSBY_CUSTOM_CONTEXT)
 
-if (process.env.CUSTOM_CONTEXT === 'production') {
+if (process.env.GATSBY_CUSTOM_CONTEXT === 'production') {
   password = process.env.GATSBY_FUNCTION_PASSWORD
-} else if (process.env.CUSTOM_CONTEXT === 'development') {
+} else if (process.env.GATSBY_CUSTOM_CONTEXT === 'development') {
   password = process.env.GATSBY_DEV_FUNCTION_PASSWORD
 } else {
-  console.error('process.env.CUSTOM_CONTEXT is invalid. \nPlease select from `production` or `development`\n')
-  console.error('process.env.CUSTOM_CONTEXT = ', process.env.CUSTOM_CONTEXT);
+  console.error('process.env.GATSBY_CUSTOM_CONTEXT is invalid. \nPlease select from `production` or `development`\n')
+  console.error('process.env.GATSBY_CUSTOM_CONTEXT = ', process.env.GATSBY_CUSTOM_CONTEXT);
 }
 
 // host = 'https://gatsby-dev-blog-starter.netlify.com'
