@@ -55,7 +55,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "netlify-dev": "GATSBY_CUSTOM_CONTEXT=development netlify dev",
+    "netlify-dev": "yarn run cross-env GATSBY_CUSTOM_CONTEXT=development netlify dev",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
