@@ -1,4 +1,3 @@
-const GATSBY_CUSTOM_CONTEXT = process.env.GATSBY_CUSTOM_CONTEXT
 const CUSTOM_CONTEXT = process.env.CUSTOM_CONTEXT
 const context1 = process.env.GATSBY_CUSTOM_CONTEXT1
 const context2 = process.env.GATSBY_XXX
