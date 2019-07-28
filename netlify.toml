@@ -3,3 +3,5 @@
   publish = "public"
   command = "yarn build"
   functions = "src/functions"
+[context.production]
+	GATSBY_CUSTOM_CONTEXT="production"
