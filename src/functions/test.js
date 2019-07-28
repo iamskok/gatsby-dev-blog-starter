@@ -9,6 +9,6 @@ const password = process.env.GATSBY_FUNCTION_PASSWORD
 exports.handler = (event, context, callback) => {
   callback(null, {
     statusCode: 200,
-    body: `TEST:: context: ${JSON.stringify(GATSBY_CUSTOM_CONTEXT)}, context1: ${JSON.stringify(context1)}, context2: ${JSON.stringify(context2)}, host: ${host}, clientId: ${clientId}, clientSecret: ${clientSecret}, password: ${password},`
+    body: `TEST:: context: ${GATSBY_CUSTOM_CONTEXT}, context1: ${JSON.stringify(context1)}, context2: ${JSON.stringify(context2)}, host: ${host}, clientId: ${clientId}, clientSecret: ${clientSecret}, password: ${password},`
   })
 }
