@@ -35,7 +35,7 @@
     "react-dom": "16.12.0",
     "react-headroom": "2.2.8",
     "react-helmet": "5.2.1",
-    "react-particles-js": "2.7.0",
+    "react-particles-js": "3.2.1",
     "rehype-format": "2.3.2",
     "rehype-prism-template": "0.4.1",
     "rehype-raw": "4.0.1",
