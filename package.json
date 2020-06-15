@@ -39,7 +39,7 @@
     "rehype-format": "2.3.2",
     "rehype-prism-template": "0.4.1",
     "rehype-raw": "4.0.1",
-    "rehype-sanitize": "2.0.3",
+    "rehype-sanitize": "3.0.1",
     "rehype-stringify": "5.0.0",
     "remark-breaks": "1.0.3",
     "remark-emoji": "2.0.2",
