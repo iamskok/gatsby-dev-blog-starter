@@ -36,7 +36,7 @@
     "react-headroom": "2.2.8",
     "react-helmet": "6.1.0",
     "react-particles-js": "3.2.1",
-    "rehype-format": "3.0.1",
+    "rehype-format": "3.1.0",
     "rehype-prism-template": "0.4.1",
     "rehype-raw": "4.0.1",
     "rehype-sanitize": "2.0.3",
