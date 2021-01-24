@@ -64,7 +64,7 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
-    "commitizen": "4.1.2",
+    "commitizen": "4.2.3",
     "cz-customizable": "6.2.0",
     "prettier": "2.0.5",
     "standard-version": "4.4.0"
