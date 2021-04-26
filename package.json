@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "author": "Vladimir Skok <skok@vova.io>",
   "dependencies": {
-    "date-fns": "2.14.0",
+    "date-fns": "2.21.1",
     "axios": "0.19.2",
     "gatsby": "2.18.7",
     "gatsby-cli": "2.8.16",
