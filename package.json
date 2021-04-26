@@ -33,7 +33,7 @@
     "react": "16.13.1",
     "react-cookie": "3.1.2",
     "react-dom": "16.13.1",
-    "react-headroom": "2.2.8",
+    "react-headroom": "3.1.1",
     "react-helmet": "6.1.0",
     "react-particles-js": "3.2.1",
     "rehype-format": "3.0.1",
