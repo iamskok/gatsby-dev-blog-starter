@@ -41,11 +41,11 @@
     "rehype-raw": "4.0.1",
     "rehype-sanitize": "2.0.3",
     "rehype-stringify": "5.0.0",
-    "remark-breaks": "1.0.3",
+    "remark-breaks": "2.0.2",
     "remark-emoji": "2.0.2",
-    "remark-github": "7.0.7",
-    "remark-parse": "6.0.3",
-    "remark-rehype": "4.0.1",
+    "remark-github": "10.0.1",
+    "remark-parse": "9.0.0",
+    "remark-rehype": "8.1.0",
     "unified": "7.1.0"
   },
   "keywords": [
