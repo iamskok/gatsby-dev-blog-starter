@@ -46,7 +46,7 @@
     "remark-github": "7.0.7",
     "remark-parse": "6.0.3",
     "remark-rehype": "4.0.1",
-    "unified": "7.1.0"
+    "unified": "9.2.1"
   },
   "keywords": [
     "gatsby",
